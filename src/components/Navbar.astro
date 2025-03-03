@@ -1,0 +1,62 @@
+---
+import navLinks from "../nav-links.json"; // Ajusta la ruta si es necesario
+---
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container px-5">
+    <a class="navbar-brand" href="index.html">
+      <strong>
+        <i class="fas fa-mobile-alt mx-1"></i>Tomy<span class="text-success"
+          >Cell</span
+        ></strong
+      >
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        {
+          navLinks.map((link) =>
+            link.dropdown ? (
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  {link.text}
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  {link.dropdown.map((dropdownLink) => (
+                    <li>
+                      <a class="dropdown-item" href={dropdownLink.href}>
+                        {dropdownLink.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ) : (
+              <li class="nav-item">
+                <a class="nav-link" href={link.href}>
+                  {link.text}
+                </a>
+              </li>
+            ),
+          )
+        }
+      </ul>
+    </div>
+  </div>
+</nav>

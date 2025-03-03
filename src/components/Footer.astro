@@ -1,0 +1,23 @@
+---
+// Puedes incluir código de Astro aquí si es necesario
+---
+
+<footer class="bg-dark py-4 mt-auto">
+  <div class="container px-5">
+    <div
+      class="row align-items-center justify-content-between flex-column flex-sm-row"
+    >
+      <div class="col-auto">
+        <div class="small m-0 text-white">
+          Copyright &copy; TomyCell <span id="current-year"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Script para insertar el año actual
+  document.getElementById("current-year").textContent =
+    new Date().getFullYear();
+</script>
