@@ -1,0 +1,38 @@
+{
+  "cellphones": [
+    {
+      "title": "Cambio de pantalla",
+      "link": "cambio-de-pantalla",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "buttonText": "Ver Reparación"
+    },
+    {
+      "title": "Cambio de batería",
+      "link": "cambio-de-bateria",
+      "videoUrl": "https://www.youtube.com/watch?v=J---aiyznGQ",
+      "buttonText": "Ver Reparación"
+    }
+  ],
+  "laptops": [
+    {
+      "title": "Reemplazo de pantalla",
+      "link": "reemplazo-de-pantalla",
+      "videoUrl": "https://www.youtube.com/watch?v=l-tri5h9S20",
+      "buttonText": "Ver Reparación"
+    },
+    {
+      "title": "Cambio de teclado",
+      "link": "cambio-de-teclado",
+      "videoUrl": "https://www.youtube.com/watch?v=l-tri5h9S20",
+      "buttonText": "Ver Reparación"
+    }
+  ],
+  "otros": [
+    {
+      "title": "Reparación de cargadores",
+      "link": "reparacion-de-cargadores",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "buttonText": "Ver Reparación"
+    }
+  ]
+}

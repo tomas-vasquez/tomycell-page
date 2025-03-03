@@ -1,0 +1,42 @@
+---
+import repairs from "../../../data/repairs.json";
+
+// Generar las rutas dinámicas
+export async function getStaticPaths() {
+  let paths = [];
+
+  Object.entries(repairs).forEach(([category, repairList]) => {
+    repairList.forEach((repair) => {
+      paths.push({
+        params: { category, slug: repair.link },
+      });
+    });
+  });
+
+  return paths;
+}
+
+const { category, slug } = Astro.params;
+const repair = repairs[category]?.find((r) => r.link === slug);
+
+if (!repair) {
+  throw new Error("Reparación no encontrada");
+}
+---
+
+<html>
+  <head>
+    <title>{repair.title}</title>
+  </head>
+  <body>
+    <h1>{repair.title}</h1>
+    <iframe
+      width="560"
+      height="315"
+      src={repair.videoUrl}
+      frameborder="0"
+      allowfullscreen></iframe>
+    <br />
+    <button>{repair.buttonText}</button>
+  </body>
+</html>

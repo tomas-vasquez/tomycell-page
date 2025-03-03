@@ -1,0 +1,31 @@
+---
+import Layout from "../../layouts/Layout.astro";
+//import Header from "../../components/headers/SimpleHeader.astro";
+import RepairOptions from "../../components/sections/RepairOptions.astro";
+import WhyUs from "../../components/sections/WhyUs.astro";
+
+import repairs from "../../data/repairs.json";
+
+// Generar las rutas dinámicas
+export async function getStaticPaths() {
+  return Object.keys(repairs).map((category) => ({
+    params: { category },
+  }));
+}
+
+const { category } = Astro.params;
+const repairOptions = repairs[category];
+
+if (!repairOptions) {
+  throw new Error("Categoría no encontrada");
+}
+---
+
+<Layout>
+  <RepairOptions
+    title={category}
+    text={"hola jsksksk"}
+    options={repairOptions}
+  />
+  <WhyUs />
+</Layout>

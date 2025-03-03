@@ -1,29 +1,32 @@
----
-const { id } = Astro.props;
-const apiKey = "AIzaSyD739-eb6NzS_KbVJq1K8ZAxnrMfkIqPyw";
----
+<div
+  style="position: relative; padding-bottom: 177.5%; height: 0; overflow: hidden; max-width: 100%; background: #000;"
+>
+  <iframe
+    id="youtube-video"
+    src="https://www.youtube.com/embed/w50G1mIMVJ8?start=0&rel=0&modestbranding=1&autoplay=1"
+    frameborder="0"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  >
+  </iframe>
+</div>
 
-<head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vlitejs@4/dist/vlite.css" />
-</head>
-
-<video id="player" class="vlite-js" controls data-id={id} data-apikey={apiKey}></video>
-
-<script src="https://cdn.jsdelivr.net/npm/vlitejs@4"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const videoElement = document.getElementById("player");
-    const videoID = videoElement.dataset.id;
-    const apiKey = videoElement.dataset.apikey;
+  var iframe = document.getElementById("youtube-video");
 
-    try {
-      const { id: driveID } = JSON.parse(atob(videoID));
-      videoElement.src = `https://www.googleapis.com/drive/v3/files/${driveID}?alt=media&key=${apiKey}`;
-      videoElement.poster = `https://lh3.googleusercontent.com/d/${driveID}`;
-      
-      new Vlitejs(videoElement);
-    } catch (error) {
-      console.error("Error al procesar el ID del video:", error);
-    }
+  iframe.addEventListener("load", function () {
+    var videoId = "w50G1mIMVJ8"; // ID del video
+    var player = new YT.Player(iframe, {
+      events: {
+        onStateChange: function (event) {
+          if (event.data === YT.PlayerState.ENDED) {
+            window.location.href = "https://your-redirect-url.com"; // Redirige a donde desees
+          }
+        },
+      },
+    });
   });
 </script>
+
+<script src="https://www.youtube.com/iframe_api"></script>

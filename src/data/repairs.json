@@ -1,0 +1,24 @@
+{
+  "cellphones": [
+    {
+      "title": "Cambio de pantalla",
+      "link": "cambio-de-pantalla",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "buttonText": "Ver Reparación"
+    },
+    {
+      "title": "Cambio de batería",
+      "link": "cambio-de-bateria",
+      "videoUrl": "https://www.youtube.com/embed/J---aiyznGQ",
+      "buttonText": "Ver Reparación"
+    }
+  ],
+  "laptops": [
+    {
+      "title": "Reemplazo de pantalla",
+      "link": "reemplazo-de-pantalla",
+      "videoUrl": "https://www.youtube.com/embed/l-tri5h9S20",
+      "buttonText": "Ver Reparación"
+    }
+  ]
+}

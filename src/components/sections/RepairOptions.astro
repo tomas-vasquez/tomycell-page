@@ -1,0 +1,29 @@
+---
+const { title, text, category, options } = Astro.props;
+---
+
+<section class="py-5">
+  <div class="container px-5 my-5">
+    <div class="row gx-5 justify-content-center">
+      <div class="col-lg-8 col-xl-6">
+        <div class="text-center">
+          <h2 class="fw-bolder">{title}</h2>
+          <p class="lead fw-normal text-muted mb-5">
+            {text}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {
+      options.map((repair) => (
+        <a
+          class="mb-2 btn btn-primary btn-lg px-4 me-sm-3"
+          href={`/repairs/${category}/${repair.link}`}
+        >
+          {repair.title}
+        </a>
+      ))
+    }
+  </div>
+</section>
