@@ -1,0 +1,18 @@
+# Ignorar la carpeta node_modules
+node_modules/
+
+# Ignorar archivos de configuración de proyectos
+*.config.js
+
+# Ignorar el directorio dist (output de la compilación)
+dist/
+
+# Ignorar archivos de log
+*.log
+
+# Ignorar archivos específicos
+*.min.*
+*lock.*
+
+# Ignorar todo en la carpeta test
+test/*

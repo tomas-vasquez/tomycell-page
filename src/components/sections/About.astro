@@ -1,0 +1,92 @@
+---
+import {
+  sectionTitle,
+  title,
+  description,
+  counterData,
+} from "@/data/about.json";
+
+import { Image } from "astro:assets";
+---
+
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6">
+        <div class="row g-3">
+          <div class="col-6 text-start">
+            <Image
+              class="img-fluid rounded w-100"
+              src="/img/about-1.jpg"
+              alt="descriptive text"
+              width="200"
+              height="150"
+            />
+          </div>
+          <div class="col-6 text-start">
+            <Image
+              class="img-fluid rounded w-75"
+              src="/img/about-2.jpg"
+              style="margin-top: 25%;"
+              alt="descriptive text"
+              width="200"
+              height="150"
+            />
+          </div>
+          <div class="col-6 text-end">
+            <Image
+              class="img-fluid rounded w-75"
+              src="/img/about-3.jpg"
+              alt="descriptive text"
+              width="200"
+              height="150"
+            />
+          </div>
+          <div class="col-6 text-end">
+            <Image
+              class="img-fluid rounded w-100"
+              src="/img/about-4.jpg"
+              alt="descriptive text"
+              width="200"
+              height="150"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h5 class="section-title d-flex align-items-center text-primary fs-6">
+          <span>{sectionTitle}</span>
+          <span class="flex-grow-1 border-bottom border-muted ms-2"></span>
+        </h5>
+        <h2 class="mb-4">{title}</h2>
+        <p class="mb-4">
+          {description}
+        </p>
+        <div class="row g-4 mb-4">
+          {
+            counterData.map((item, index) => (
+              <div class="col-sm-6" key={index}>
+                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                  <h1
+                    class="flex-shrink-0 display-5 text-primary mb-0"
+                    data-toggle="counter-up"
+                    data-aos="zoom-in"
+                  >
+                    {item.value}
+                  </h1>
+                  <div class="ps-4">
+                    <p class="mb-0">{item.label_1}</p>
+                    <h6 class="text-uppercase mb-0">{item.label_2}</h6>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <a class="d-none btn btn-primary py-3 px-5 mt-2" href="index.html">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

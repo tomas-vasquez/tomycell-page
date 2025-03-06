@@ -1,0 +1,39 @@
+---
+import Seo from "@/components/Seo.astro";
+import Layout from "@/components/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import Testimonial from "@/components/sections/Testimonial.astro";
+import data from "@/data/main.json";
+
+const { category } = Astro.params;
+const { title, subtitle, options } =
+  data.options.find((option) => option.key === category) || {};
+
+// Generar las rutas dinámicas
+export async function getStaticPaths() {
+  return data.options.map((option) => ({
+    params: { category: option.key, title: option.key }, // Asegúrate de pasar 'category' como un objeto
+  }));
+}
+---
+
+<Seo title={title} description={subtitle} />
+
+<Layout>
+  <Hero title={title} content={subtitle}>
+    {
+      options &&
+        options.map((repair) => (
+          <a
+            class="m-2 btn btn-primary align-items-center px-4"
+            href={`/reparar/${category}/${repair.key}`}
+          >
+            <span class="text-start">{repair.title}</span>
+            <i class="fas fa-arrow-right ms-2" />
+          </a>
+        ))
+    }
+  </Hero>
+
+  <Testimonial />
+</Layout>

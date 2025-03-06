@@ -1,0 +1,131 @@
+{
+  "title": "¿Quieres reparar tu equipo?",
+  "subtitle": "A continuación selecciona:",
+  "description": "TomyCell ofrece servicio de reparación de celulares, laptops y otros dispositivos en Bolivia. Expertos en cambio de pantallas, baterías y más.",
+  "options": [
+    {
+      "key": "celular",
+      "title": "Reparaciones de Celulares",
+      "subtitle": "Selecciona el problema de tu celular:",
+      "sectionTitle": "¿Qué problema tiene tu celular?",
+      "description": "Servicio especializado en reparación de celulares: cambio de pantalla, batería, altavoz y más. Atención rápida y profesional.",
+      "icon": "fas fa-mobile-alt",
+      "options": [
+        {
+          "key": "pantalla",
+          "title": "Pantalla quebrada",
+          "subtitle": "Reemplazo de pantalla completa",
+          "description": "Cambio de pantalla para celulares con daños graves. Usamos pantallas originales y garantizamos la reparación.",
+          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
+          "buttonText": "Quiero cambiar mi pantalla"
+        },
+        {
+          "key": "glass",
+          "title": "Glass quebrado",
+          "subtitle": "Reemplazo de vidrio frontal",
+          "description": "Reemplazo de glass para celulares con pantalla quebrada. Mantén la calidad de tu equipo con repuestos originales.",
+          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
+          "buttonText": "Quiero cambiar mi glass"
+        },
+        {
+          "key": "bateria",
+          "title": "Batería dañada",
+          "subtitle": "Reemplazo de batería",
+          "description": "Cambio de batería para mejorar la autonomía de tu celular. Baterías originales y compatibles con tu equipo.",
+          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
+          "buttonText": "Quiero cambiar mi batería"
+        },
+        {
+          "key": "carga",
+          "title": "Problemas de carga",
+          "subtitle": "Reparación del puerto de carga",
+          "description": "Si tu celular no carga o lo hace intermitentemente, reparamos o cambiamos el puerto de carga.",
+          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
+          "buttonText": "Quiero reparar el puerto de carga"
+        },
+        {
+          "key": "altavoz",
+          "title": "Altavoz o micrófono defectuoso",
+          "subtitle": "Reparación o reemplazo",
+          "description": "Solucionamos problemas de sonido en llamadas, altavoz o micrófono defectuoso.",
+          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
+          "buttonText": "Quiero reparar mi altavoz o micrófono"
+        },
+        {
+          "key": "botones",
+          "title": "Botones dañados",
+          "subtitle": "Reparación de botones de encendido o volumen",
+          "description": "Reparación o cambio de botones que no responden o están atascados.",
+          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
+          "buttonText": "Quiero reparar los botones de mi celular"
+        },
+        {
+          "key": "camara",
+          "title": "Cámara dañada",
+          "subtitle": "Reemplazo o reparación de cámara",
+          "description": "Si tu cámara toma fotos borrosas o no funciona, reparamos o cambiamos el módulo de la cámara.",
+          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
+          "buttonText": "Quiero reparar mi cámara"
+        },
+        {
+          "key": "sensor",
+          "title": "Sensor de proximidad o huella fallando",
+          "subtitle": "Reemplazo o calibración",
+          "description": "Si tu sensor de proximidad o lector de huellas no funciona correctamente, lo calibramos o reemplazamos.",
+          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
+          "buttonText": "Quiero reparar mi sensor"
+        },
+        {
+          "key": "placa",
+          "title": "Falla en la placa base",
+          "subtitle": "Reparación de circuitos internos",
+          "description": "Solucionamos fallas en la placa base como problemas de encendido, sobrecalentamiento o reinicios constantes.",
+          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
+          "buttonText": "Quiero reparar la placa base"
+        },
+        {
+          "key": "software",
+          "title": "Problemas de software",
+          "subtitle": "Flasheo o reinstalación del sistema",
+          "description": "Si tu celular está lento, tiene errores o no enciende por problemas de software, lo restauramos.",
+          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
+          "buttonText": "Quiero reparar el software de mi celular"
+        }
+      ]
+    },
+    {
+      "key": "laptop",
+      "title": "Reparaciones de Laptops",
+      "subtitle": "Selecciona el tipo de reparación para tu laptop:",
+      "description": "Expertos en reparación de laptops: cambio de pantalla, batería, teclado y problemas de carga. Servicio garantizado.",
+      "icon": "fas fa-laptop",
+      "options": [
+        {
+          "key": "reemplazo-de-pantalla",
+          "title": "Reemplazo de pantalla",
+          "subtitle": "Reemplazo de pantalla dañada",
+          "description": "Reemplazamos pantallas de laptops dañadas con repuestos de alta calidad. Servicio rápido y profesional.",
+          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
+          "buttonText": "Quiero cambiar mi pantalla"
+        }
+      ]
+    },
+    {
+      "key": "otro",
+      "title": "Otros Dispositivos",
+      "subtitle": "Selecciona la reparación que necesitas:",
+      "description": "Reparamos impresoras, electrodomésticos y otros dispositivos electrónicos. Diagnóstico y solución rápida.",
+      "icon": "fas fa-tools",
+      "options": [
+        {
+          "key": "impresoras",
+          "title": "Reparación de impresoras",
+          "subtitle": "Reparación de impresoras dañadas",
+          "description": "Reparación de impresoras con problemas de impresión, atascos de papel y fallas electrónicas.",
+          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
+          "buttonText": "Quiero reparar mi impresora"
+        }
+      ]
+    }
+  ]
+}

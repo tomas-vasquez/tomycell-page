@@ -1,0 +1,13 @@
+{
+  "sectionTitle": "Ubicación",
+  "title": "¿Dónde nos encontramos?",
+  "description": "Especialistas en la reparación de equipos electrónicos en Santa Cruz, ofrecemos soluciones confiables para celulares, laptops y más. También realizamos compra y venta de dispositivos reacondicionados, y contamos con servicio de recojo a domicilio.",
+  "markers": [
+    {
+      "nombre": "Taller principal",
+      "lat": -17.78125,
+      "lon": -63.1793,
+      "descripcion": "Centro de la ciudad."
+    }
+  ]
+}

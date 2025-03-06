@@ -1,0 +1,46 @@
+---
+import "@/css/style.css";
+
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Spinner from "@/components/Spinner.astro";
+import ModalVideo from "@/components/ModalVideo.astro";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TomyCell</title>
+
+    <!-- Google Web Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar & Hero Start -->
+    <div class="container-xxl position-relative p-0">
+      <Navbar />
+    </div>
+    <slot />
+    <Footer />
+
+    <Spinner />
+    <script src="@/scripts/main.js"></script>
+  </body>
+  <ModalVideo />
+</html>

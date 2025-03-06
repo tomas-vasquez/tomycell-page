@@ -1,62 +1,59 @@
 ---
-import navLinks from "../nav-links.json"; // Ajusta la ruta si es necesario
+import navLinks from "../data/nav-links.json"; // Asegúrate de la ruta correcta
 ---
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container px-5">
-    <a class="navbar-brand" href="index.html">
-      <strong>
-        <i class="fas fa-mobile-alt mx-1"></i>Tomy<span class="text-success"
-          >Cell</span
-        ></strong
+<nav
+  class="navbar navbar-expand-md navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0"
+>
+  <a href="/" class="navbar-brand p-0">
+    <h1 class="text-light m-0">
+      <i class="fa fa-mobile-alt me-2"></i>Tomy<span class="text-primary"
+        >Cell</span
       >
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        {
-          navLinks.map((link) =>
-            link.dropdown ? (
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  {link.text}
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  {link.dropdown.map((dropdownLink) => (
-                    <li>
-                      <a class="dropdown-item" href={dropdownLink.href}>
-                        {dropdownLink.text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ) : (
-              <li class="nav-item">
-                <a class="nav-link" href={link.href}>
-                  {link.text}
-                </a>
-              </li>
-            ),
-          )
-        }
-      </ul>
+    </h1>
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarCollapse"
+    aria-controls="navbarCollapse"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="fa fa-bars"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-nav ms-auto mt-4 mt-md-1">
+      {
+        navLinks.map((link) =>
+          link.dropdown ? (
+            <div class="nav-item dropdown py-3 mx-2">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle m-0 p-0 me-2"
+                data-bs-toggle="dropdown"
+              >
+                {link.text}
+              </a>
+              <div class="dropdown-menu m-0 p-0 mt-2 mt-md-0">
+                {link.dropdown.map((subLink) => (
+                  <a href={subLink.href} class="dropdown-item">
+                    {subLink.text}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <a href={link.href} class="nav-item nav-link py-3 mx-2">
+              {link.text}
+            </a>
+          ),
+        )
+      }
     </div>
+    <a href="index.html" class="btn btn-primary my-3 px-4"
+      >Tienda <i class="fas fa-arrow-right"></i></a
+    >
   </div>
 </nav>

@@ -2,28 +2,34 @@
 const { title, text, category, options } = Astro.props;
 ---
 
-<section class="py-5">
+<section class="pt-5">
   <div class="container px-5 my-5">
-    <div class="row gx-5 justify-content-center">
-      <div class="col-lg-8 col-xl-6">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 col-xl-6">
         <div class="text-center">
-          <h2 class="fw-bolder">{title}</h2>
-          <p class="lead fw-normal text-muted mb-5">
-            {text}
-          </p>
+          <h1 class="fw-bolder mb-4">
+            ¿Qué problema tiene tu {title}?
+          </h1>
+          <p class="lead fw-normal mb-4">Selecciona una opción:</p>
+
+          <!-- Usamos row-cols-md-2 para 2 columnas en dispositivos medianos (tablet y laptop) -->
+          <div class="row row-cols-1 row-cols-md-2">
+            {
+              options.map((repair) => (
+                <div class="col mb-2">
+                  <a
+                    class="mb-2 btn btn-primary w-100 d-flex justify-content-between align-items-center px-4"
+                    href={`/repairs/${category}/${repair.link}`}
+                  >
+                    <span class="text-start">{repair.title}</span>
+                    <i class="fas fa-arrow-right ms-2" />
+                  </a>
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>
-
-    {
-      options.map((repair) => (
-        <a
-          class="mb-2 btn btn-primary btn-lg px-4 me-sm-3"
-          href={`/repairs/${category}/${repair.link}`}
-        >
-          {repair.title}
-        </a>
-      ))
-    }
   </div>
 </section>

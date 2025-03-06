@@ -1,0 +1,190 @@
+/* =================== IMPORTACIÓN DE ESTILOS EXTERNOS =================== */
+@import "bootstrap/dist/css/bootstrap.min.css"; /* Bootstrap */
+@import "aos/dist/aos.css"; /* AOS (Animaciones al hacer scroll) */
+@import "swiper/css"; /* Swiper (Carrusel) */
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "leaflet/dist/leaflet.css"; /* Leaflet (Mapas) */
+
+/* =================== VARIABLES CSS =================== */
+:root {
+  --primary-color: #26ba30; /* Color principal personalizado */
+}
+
+/* =================== ESTILOS GENERALES =================== */
+body {
+  font-family: "Quicksand", sans-serif;
+  padding: 0;
+}
+
+/* =================== TIPOGRAFÍA =================== */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.ff-secondary {
+  font-size: 17px;
+}
+
+.ff-secondary::before {
+  content: "";
+  flex-grow: 1;
+  height: 2px;
+  background-color: #bbb;
+  margin-left: 10px;
+}
+
+/* =================== BOTONES =================== */
+.btn {
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.border-primary {
+  border-color: var(--primary-color) !important;
+}
+
+/* Botones personalizados (cuadrados) */
+.btn-square {
+  width: 38px;
+  height: 38px;
+}
+
+.btn-sm-square {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-lg-square {
+  width: 48px;
+  height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  border-radius: 2px;
+}
+
+/* =================== NAVBAR =================== */
+.navbar-dark .navbar-nav .nav-link {
+  position: relative;
+  margin-left: 25px;
+  padding: 35px 0;
+  font-size: 15px;
+  color: var(--bs-light) !important;
+  text-transform: uppercase;
+  font-weight: 500;
+  outline: none;
+  transition: 0.5s;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--bs-primary) !important;
+}
+
+/* =================== HERO HEADER =================== */
+.hero-header {
+  background:
+    linear-gradient(rgba(4, 13, 20, 0.9), rgba(4, 13, 20, 0.9)),
+    url(/img/bg-hero.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* =================== MODALES =================== */
+#videoModal .modal-dialog {
+  position: relative;
+  max-width: 800px;
+  margin: 60px auto 0 auto;
+}
+
+/* =================== FOOTER =================== */
+.footer .btn.btn-social {
+  margin-right: 5px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bs-light);
+  border: 1px solid #ffffff;
+  border-radius: 35px;
+  transition: 0.3s;
+}
+
+.footer .btn.btn-social:hover {
+  color: var(--bs-primary);
+}
+
+/* =================== SWIPER (CARRUSEL) =================== */
+.swiper-slide {
+  opacity: 0.5; /* Testimonios no activos tienen opacidad reducida */
+  transition:
+    opacity 0.3s ease,
+    transform 0.5s ease; /* Transición para la opacidad y movimiento */
+  transform: scale(0.8); /* Reducir tamaño de los testimonios no activos */
+}
+
+.swiper-slide-active {
+  opacity: 1; /* Testimonio activo con opacidad completa */
+  transform: scale(1); /* Tamaño normal para el testimonio activo */
+}
+
+.swiper-slide-next,
+.swiper-slide-prev {
+  opacity: 0.6; /* Opacidad intermedia para los testimonios próximos y anteriores */
+  transform: scale(
+    0.8
+  ); /* Tamaño reducido para testimonios próximos y anteriores */
+}
+
+/* Asegura que las imágenes del carrusel no se estiren */
+.swiper-slide img {
+  object-fit: cover;
+}
+
+.swiper .card {
+  transition: 1s;
+}
+
+/* Posicionamiento de la paginación del Swiper */
+.swiper-pagination {
+  text-align: center !important;
+  position: relative !important; /* Asegura que no se quede pegado abajo */
+}
+
+/* Estilo para los puntos de paginación del Swiper */
+.swiper-pagination-bullet {
+  background-color: #d8d6d6 !important; /* Color de los puntos de paginación */
+  width: 14px; /* Tamaño de los puntos */
+  height: 14px; /* Tamaño de los puntos */
+  opacity: 1; /* Mantiene los puntos visibles */
+  transition: background-color 0.3s ease; /* Suaviza el cambio de color */
+}
+
+/* Estilo cuando el punto de paginación está activo */
+.swiper-pagination-bullet-active {
+  background-color: var(
+    --primary-color
+  ) !important; /* Color más oscuro cuando está activo */
+}

@@ -1,0 +1,17 @@
+{
+  "sectionTitle": "Acerca de nosotros",
+  "title": "¿Qué es TomyCell?",
+  "description": "Especialistas en la reparación de equipos electrónicos en Santa Cruz, ofrecemos soluciones confiables para celulares, laptops y más. También realizamos compra y venta de dispositivos reacondicionados, y contamos con servicio de recojo a domicilio.",
+  "counterData": [
+    {
+      "label_1": "Años de",
+      "label_2": "Experiencia",
+      "value": 5
+    },
+    {
+      "label_1": "Equipos",
+      "label_2": "Reparados",
+      "value": 5475
+    }
+  ]
+}

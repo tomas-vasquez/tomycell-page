@@ -1,0 +1,58 @@
+---
+import Video from "@/components/Video.astro";
+import data from "@/data/main.json";
+const textSection = "Top reparaciones";
+const title = "Mira como reparamos";
+
+let reparations = [];
+
+data.options.forEach((category) => {
+  category.options.forEach((reparation) => {
+    reparations.push(reparation);
+  });
+});
+---
+
+<div class="bg-light">
+  <div class="container py-5">
+    <div class="swiper p-0">
+      <div class="text-center mb-3">
+        <div class="text-center">
+          <h5
+            class="d-md-none section-title d-flex align-items-center text-primary fs-6"
+          >
+            <span>{textSection}</span>
+            <span class="flex-grow-1 border-bottom border-muted ms-2"></span>
+          </h5>
+
+          <h5
+            class="d-none d-md-flex section-title align-items-center text-primary fs-6 justify-content-center"
+          >
+            <span class="border-bottom border-muted" style="width: 100px;"
+            ></span>
+            <span class="ms-2 me-2">{textSection}</span>
+            <span class="border-bottom border-muted" style="width: 100px;"
+            ></span>
+          </h5>
+
+          <h1 class="fs-2 text-start text-md-center">{title}</h1>
+          <p class="lead fw-normal mb-4 mb-lg-5"></p>
+        </div>
+      </div>
+
+      <div class="swiper-wrapper mb-4">
+        <!-- Iterar sobre los testimonios -->
+        {
+          reparations.map((reparation, index) => (
+            <div class="swiper-slide">
+              <div class="card shadow">
+                <Video driveId={reparation.driveVideoId} index={index} />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <div class="swiper-pagination d-flex justify-content-center"></div>
+    </div>
+  </div>
+</div>

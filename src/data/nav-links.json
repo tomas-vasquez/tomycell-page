@@ -1,0 +1,23 @@
+[
+  {
+    "text": "Inicio",
+    "href": "/"
+  },
+  {
+    "text": "Acerca de...",
+    "href": "/about"
+  },
+  {
+    "text": "Institucional",
+    "href": "/terms"
+  },
+  {
+    "text": "Blog",
+    "dropdown": [
+      {
+        "text": "hola",
+        "href": "/hola"
+      }
+    ]
+  }
+]

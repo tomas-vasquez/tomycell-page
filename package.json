@@ -6,17 +6,25 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+  "prettier": "chokidar 'src/**/*.{astro,js,ts,jsx,tsx,json,html,css}' -c 'npx prettier --write {path}'"
   },
   "dependencies": {
+    "@astrojs/react": "^4.2.1",
+    "@astrojs/sitemap": "^3.2.1",
     "@fortawesome/fontawesome-free": "^6.7.2",
+    "aos": "^2.3.4",
     "astro": "^5.4.1",
+    "astro-compress": "^2.3.6",
     "bootstrap": "^5.3.3",
-    "bootswatch": "^5.3.3"
+    "chokidar-cli": "^3.0.0",
+    "leaflet": "^1.9.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "swiper": "^11.2.5"
   },
   "devDependencies": {
     "prettier": "^3.5.2",
-    "prettier-plugin-astro": "^0.14.1",
-    "sass": "^1.85.1"
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

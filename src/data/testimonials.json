@@ -1,0 +1,31 @@
+{
+  "sectionTitle": "Testimonios",
+  "title": "¿Que dicen de nosotros?",
+  "subtitle": "",
+  "testimonials": [
+    {
+      "name": "Ana Fernández",
+      "profession": "Estudiante",
+      "testimonial": "Mi celular tenía la pantalla completamente rota y lo repararon en menos de una hora. ¡Excelente servicio y muy buenos precios!",
+      "image": "/img/testimonial-1.jpg"
+    },
+    {
+      "name": "Javier Ríos",
+      "profession": "Empresario",
+      "testimonial": "Llevé mi teléfono porque no encendía y pensaba que debía comprar otro. Lo arreglaron rápido y a un precio justo. ¡Muy recomendado!",
+      "image": "/img/testimonial-2.jpg"
+    },
+    {
+      "name": "Sofía López",
+      "profession": "Diseñadora Gráfica",
+      "testimonial": "El servicio a domicilio es súper conveniente. Vinieron por mi celular, le cambiaron la batería y me lo devolvieron el mismo día.",
+      "image": "/img/testimonial-3.jpg"
+    },
+    {
+      "name": "Carlos Méndez",
+      "profession": "Técnico en Redes",
+      "testimonial": "Compré un celular reacondicionado y está como nuevo. Gran atención y garantía. Volveré a comprar sin duda.",
+      "image": "/img/testimonial-4.jpg"
+    }
+  ]
+}
