@@ -1,18 +1,22 @@
 ---
 import Seo from "@/components/Seo.astro";
 import Layout from "@/components/Layout.astro";
-import About from "@/components/sections/About.astro";
-import Testimonial from "@/components/sections/Testimonial.astro";
 import Hero from "@/components/Hero.astro";
-import Ubication from "@/components/sections/Ubication.astro";
-import TopReparations from "@/components/sections/TopReparations.astro";
+import data from "@/data"
 
-import { title, subtitle, description, options } from "@/data/main.json";
+const { title, subtitle, description, options } = data.main;
 ---
 
-<Seo title={title} description={description} />
-
-<Layout>
+<Layout
+  sections={[
+    "about",
+    "availabledepartments",
+    "services",
+    "calltoaction",
+    "ubication",
+  ]}
+  seoData={{ title: title, description: description }}
+>
   <Hero title={title} content={subtitle}>
     {
       options.map((option) => (
@@ -23,9 +27,4 @@ import { title, subtitle, description, options } from "@/data/main.json";
       ))
     }
   </Hero>
-
-  <TopReparations />
-  <About />
-  <Testimonial />
-  <Ubication />
 </Layout>

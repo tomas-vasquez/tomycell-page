@@ -1,6 +1,6 @@
 {
   "title": "¿Quieres reparar tu equipo?",
-  "subtitle": "A continuación selecciona:",
+  "subtitle": "Selecciona el tipo de tu dispositivo:",
   "description": "TomyCell ofrece servicio de reparación de celulares, laptops y otros dispositivos en Bolivia. Expertos en cambio de pantallas, baterías y más.",
   "options": [
     {
@@ -17,7 +17,8 @@
           "subtitle": "Reemplazo de pantalla completa",
           "description": "Cambio de pantalla para celulares con daños graves. Usamos pantallas originales y garantizamos la reparación.",
           "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero cambiar mi pantalla"
+          "buttonText": "Quiero cambiar mi pantalla",
+          "msgText": "Hola, quiero cambiar la pantalla de mi celular."
         },
         {
           "key": "glass",
@@ -25,7 +26,8 @@
           "subtitle": "Reemplazo de vidrio frontal",
           "description": "Reemplazo de glass para celulares con pantalla quebrada. Mantén la calidad de tu equipo con repuestos originales.",
           "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero cambiar mi glass"
+          "buttonText": "Quiero cambiar mi glass",
+          "msgText": "Hola, quiero cambiar el glass de mi celular."
         },
         {
           "key": "bateria",
@@ -33,7 +35,8 @@
           "subtitle": "Reemplazo de batería",
           "description": "Cambio de batería para mejorar la autonomía de tu celular. Baterías originales y compatibles con tu equipo.",
           "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero cambiar mi batería"
+          "buttonText": "Quiero cambiar mi batería",
+          "msgText": "Hola, quiero cambiar la batería de mi celular."
         },
         {
           "key": "carga",
@@ -41,7 +44,8 @@
           "subtitle": "Reparación del puerto de carga",
           "description": "Si tu celular no carga o lo hace intermitentemente, reparamos o cambiamos el puerto de carga.",
           "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero reparar el puerto de carga"
+          "buttonText": "Quiero reparar el puerto de carga",
+          "msgText": "Hola, mi celular tiene problemas de carga. ¿Pueden ayudarme?"
         },
         {
           "key": "altavoz",
@@ -49,7 +53,8 @@
           "subtitle": "Reparación o reemplazo",
           "description": "Solucionamos problemas de sonido en llamadas, altavoz o micrófono defectuoso.",
           "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero reparar mi altavoz o micrófono"
+          "buttonText": "Quiero reparar mi altavoz o micrófono",
+          "msgText": "Hola, mi celular tiene problemas con el sonido. ¿Pueden revisarlo?"
         },
         {
           "key": "botones",
@@ -57,7 +62,8 @@
           "subtitle": "Reparación de botones de encendido o volumen",
           "description": "Reparación o cambio de botones que no responden o están atascados.",
           "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero reparar los botones de mi celular"
+          "buttonText": "Quiero reparar los botones de mi celular",
+          "msgText": "Hola, los botones de mi celular no funcionan. ¿Pueden repararlos?"
         },
         {
           "key": "camara",
@@ -65,7 +71,8 @@
           "subtitle": "Reemplazo o reparación de cámara",
           "description": "Si tu cámara toma fotos borrosas o no funciona, reparamos o cambiamos el módulo de la cámara.",
           "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero reparar mi cámara"
+          "buttonText": "Quiero reparar mi cámara",
+          "msgText": "Hola, mi cámara no funciona correctamente. ¿Pueden ayudarme?"
         },
         {
           "key": "sensor",
@@ -73,23 +80,8 @@
           "subtitle": "Reemplazo o calibración",
           "description": "Si tu sensor de proximidad o lector de huellas no funciona correctamente, lo calibramos o reemplazamos.",
           "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero reparar mi sensor"
-        },
-        {
-          "key": "placa",
-          "title": "Falla en la placa base",
-          "subtitle": "Reparación de circuitos internos",
-          "description": "Solucionamos fallas en la placa base como problemas de encendido, sobrecalentamiento o reinicios constantes.",
-          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero reparar la placa base"
-        },
-        {
-          "key": "software",
-          "title": "Problemas de software",
-          "subtitle": "Flasheo o reinstalación del sistema",
-          "description": "Si tu celular está lento, tiene errores o no enciende por problemas de software, lo restauramos.",
-          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero reparar el software de mi celular"
+          "buttonText": "Quiero reparar mi sensor",
+          "msgText": "Hola, mi sensor de proximidad o huella no funciona bien. ¿Pueden revisarlo?"
         }
       ]
     },
@@ -106,7 +98,8 @@
           "subtitle": "Reemplazo de pantalla dañada",
           "description": "Reemplazamos pantallas de laptops dañadas con repuestos de alta calidad. Servicio rápido y profesional.",
           "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero cambiar mi pantalla"
+          "buttonText": "Quiero cambiar mi pantalla",
+          "msgText": "Hola, quiero cambiar la pantalla de mi laptop."
         }
       ]
     },
@@ -123,7 +116,8 @@
           "subtitle": "Reparación de impresoras dañadas",
           "description": "Reparación de impresoras con problemas de impresión, atascos de papel y fallas electrónicas.",
           "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero reparar mi impresora"
+          "buttonText": "Quiero reparar mi impresora",
+          "msgText": "Hola, mi impresora tiene problemas. ¿Pueden revisarla?"
         }
       ]
     }

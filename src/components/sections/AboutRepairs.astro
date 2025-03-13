@@ -1,0 +1,26 @@
+---
+import SectionTitle from "@/components/SectionTitle.astro";
+import ButtonWsp from "@/components/ButtonWsp.astro";
+import data from "@/data";
+const { title, img, content, buttonText, msgText } = data.services.services[0];
+---
+
+<div
+  class="container py-0 text-center"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+>
+  <div class="row">
+    <div class={`col-md-6 d-flex justify-content-center`}>
+      <img src={img} class="img-fluid" />
+    </div>
+    <div class={`col-md-6 d-flex flex-column justify-content-center mt-md-5`}>
+      <SectionTitle title={title} />
+      <p>{content}</p>
+      <ButtonWsp msgText={msgText}>
+        {buttonText}
+        <i class="fas fa-arrow-right ms-2"></i>
+      </ButtonWsp>
+    </div>
+  </div>
+</div>

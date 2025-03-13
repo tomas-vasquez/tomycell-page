@@ -7,11 +7,12 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-  "prettier": "chokidar 'src/**/*.{astro,js,ts,jsx,tsx,json,html,css}' -c 'npx prettier --write {path}'"
+    "prettier": "chokidar 'src/**/*.{astro,js,ts,jsx,tsx,json,html,css}' -c 'npx prettier --write {path}'"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.1",
     "@astrojs/sitemap": "^3.2.1",
+    "@devmobiliza/videojs-vimeo": "^0.6.0",
     "@fortawesome/fontawesome-free": "^6.7.2",
     "aos": "^2.3.4",
     "astro": "^5.4.1",
@@ -21,6 +22,7 @@
     "leaflet": "^1.9.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sweetalert2": "^11.17.2",
     "swiper": "^11.2.5"
   },
   "devDependencies": {

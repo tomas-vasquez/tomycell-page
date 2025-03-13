@@ -1,59 +1,65 @@
 ---
+import ButtonWsp from "@/components/ButtonWsp.astro"
 import navLinks from "../data/nav-links.json"; // Asegúrate de la ruta correcta
 ---
 
-<nav
-  class="navbar navbar-expand-md navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0"
->
-  <a href="/" class="navbar-brand p-0">
-    <h1 class="text-light m-0">
-      <i class="fa fa-mobile-alt me-2"></i>Tomy<span class="text-primary"
-        >Cell</span
-      >
-    </h1>
-  </a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarCollapse"
-    aria-controls="navbarCollapse"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
+<div class="container-xxl position-relative p-0">
+  <nav
+    class="navbar navbar-expand-md navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0"
   >
-    <span class="fa fa-bars"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <div class="navbar-nav ms-auto mt-4 mt-md-1">
-      {
-        navLinks.map((link) =>
-          link.dropdown ? (
-            <div class="nav-item dropdown py-3 mx-2">
-              <a
-                href="#"
-                class="nav-link dropdown-toggle m-0 p-0 me-2"
-                data-bs-toggle="dropdown"
-              >
+    <a href="/" class="navbar-brand p-0">
+      <h1 class="text-light m-0">
+        <i class="fa fa-mobile-alt me-2"></i>Tomy<span class="text-primary"
+          >Cell</span
+        >
+      </h1>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto mt-4 mt-md-1">
+        {
+          navLinks.map((link) =>
+            link.dropdown ? (
+              <div class="nav-item dropdown py-3 mx-2">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle m-0 p-0 me-2"
+                  data-bs-toggle="dropdown"
+                >
+                  {link.text}
+                </a>
+                <div class="dropdown-menu m-0 p-0 mt-2 mt-md-0">
+                  {link.dropdown.map((subLink) => (
+                    <a href={subLink.href} class="dropdown-item">
+                      {subLink.text}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <a href={link.href} class="nav-item nav-link py-3 mx-2">
                 {link.text}
               </a>
-              <div class="dropdown-menu m-0 p-0 mt-2 mt-md-0">
-                {link.dropdown.map((subLink) => (
-                  <a href={subLink.href} class="dropdown-item">
-                    {subLink.text}
-                  </a>
-                ))}
-              </div>
-            </div>
-          ) : (
-            <a href={link.href} class="nav-item nav-link py-3 mx-2">
-              {link.text}
-            </a>
-          ),
-        )
-      }
+            ),
+          )
+        }
+      </div>
+      <div class="ms-2 mt-3 mt-md-0">
+        
+      <ButtonWsp isCatalog>
+        Tienda<i class="fas fa-shopping-cart ms-2"></i>
+      </ButtonWsp>
+      </div>
     </div>
-    <a href="index.html" class="btn btn-primary my-3 px-4"
-      >Tienda <i class="fas fa-arrow-right"></i></a
-    >
-  </div>
-</nav>
+  </nav>
+</div>

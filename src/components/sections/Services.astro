@@ -1,0 +1,44 @@
+---
+import data from "@/data";
+const { services } = data.services;
+
+import SectionTitle from "@/components/SectionTitle.astro";
+import ButtonWsp from "@/components/ButtonWsp.astro";
+---
+
+<div class="bg-light py-5">
+  <div class="container">
+    <SectionTitle sectionTitle={"Servicios"} title={"Nuestros Servicios"} />
+    <div class="row g-4 my-5">
+      {
+        services.map((option) => (
+          <div
+            class="col-lg-3 col-sm-6"
+            data-aos="fade-up"
+          >
+            <div
+              class="card rounded shadow-sm p-3 d-flex flex-column"
+              style="height: 100%;"
+            >
+              <div class="flex-grow-1 mb-2">
+                <div class="d-flex flex-row flex-sm-column text-sm-center">
+                  <i
+                    class={`mt-1 ${option.icon} text-primary me-3 me-md-0 mb-md-3`}
+                    style="font-size: 2.3rem;"
+                  />
+                  <h5 class="my-auto fw-semibold">{option.title}</h5>
+                </div>
+                <p class="mt-3">{option.shortDescription}</p>
+              </div>
+              <div class="text-center">
+                <ButtonWsp msgText={option.msgText}>
+                  {option.buttonText} <i class="fas fa-arrow-right ms-2" />
+                </ButtonWsp>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

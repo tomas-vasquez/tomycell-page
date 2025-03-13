@@ -11,7 +11,9 @@
     {
       "label_1": "Equipos",
       "label_2": "Reparados",
-      "value": 5475
+      "value": "6k"
     }
-  ]
+  ],
+  "butonnText": "Contactar por WhatsApp",
+  "msgText": "Hola, quiero información."
 }

@@ -1,0 +1,20 @@
+---
+import { codeArea, phone } from "@/data/business.json";
+import ButtonWsp from "@/components/ButtonWsp.astro";
+---
+
+<div class="container py-5 d-flex justify-content-center align-items-center">
+  <div class="card hero-header py-5 text-center w-100">
+    <div class="card-body">
+      <h2 class="fs-2 mb-3  text-white">¿Tienes alguna duda o consulta?</h2>
+      <p class="mb-4 text-white">
+        Contáctanos y nuestro equipo te brindará la mejor asesoría para
+        solucionar tu problema.
+      </p>
+
+      <ButtonWsp msgText="Hola, tengo una consulta.">
+        Servicio al cliente <i class="fab fa-whatsapp ms-2"></i>
+      </ButtonWsp>
+    </div>
+  </div>
+</div>

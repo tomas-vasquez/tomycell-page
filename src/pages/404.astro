@@ -1,0 +1,12 @@
+---
+import Layout from "@/components/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import { title, subtitle, description, options } from "@/data/main.json";
+---
+
+<Layout
+  sections={["about"]}
+  seoData={{ title: "error 404", description: description }}
+>
+  <Hero title="404" content="Ups, la página que buscas no existe." />
+</Layout>

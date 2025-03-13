@@ -1,20 +1,23 @@
 ---
-// Puedes incluir código de Astro aquí si es necesario
+import SectionTitle from "@/components/SectionTitle.astro";
+import business from "@/data/business.json";
 ---
 
-<footer class="bg-dark py-4 mt-auto">
-  <div class="container px-5">
-    <div
-      class="row align-items-center justify-content-between flex-column flex-sm-row"
-    >
-      <div class="col-auto">
-        <div class="small m-0 text-white">
-          Copyright &copy; TomyCell <span id="current-year"></span>
-        </div>
+<div class="hero-header">
+  <div class="container text-light">
+    <div class="container py-4">
+      <div class="text-center">
+        &copy; <a class="btn btn-link" href="index.html#">TomyCell</a>
+        <span id="current-year"></span>, Marca registrada. <br />
+        Página diseñada por <a
+          class="btn btn-link"
+          href="https://tomas-vasquez-quispe.vercel.app/">TomyDev</a
+        >.
       </div>
+      <!-- Footer End -->
     </div>
   </div>
-</footer>
+</div>
 
 <script>
   // Script para insertar el año actual

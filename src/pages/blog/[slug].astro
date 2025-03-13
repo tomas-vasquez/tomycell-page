@@ -1,0 +1,41 @@
+---
+import { getCollection, getEntryBySlug } from "astro:content";
+import Layout from "@/components/Layout.astro";
+import Hero from "@/components/Hero.astro";
+
+// Obtener las rutas estáticas (slugs)
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+// Obtener el post actual basado en el slug
+const { slug } = Astro.params;
+const post = await getEntryBySlug("blog", slug);
+
+if (!post) {
+  throw new Error(`Post no encontrado: ${slug}`);
+}
+
+// Desestructurar título y descripción del post
+const { title, description } = post.data;
+---
+
+<Layout
+  sections={["calltoaction"]}
+  seoData={{ title: title, description: description }}
+>
+  <Hero title={title} content={description} />
+
+  <div class="py-3 bg-light">
+    <div class="container-sm">
+      <h1>{title}</h1>
+      <p>{post.data.date}</p>
+      <article>
+        {post.body}
+      </article>
+    </div>
+  </div>
+</Layout>.

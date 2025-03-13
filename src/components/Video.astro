@@ -1,21 +1,8 @@
----
-const { driveId, index } = Astro.props;
----
-
-<!-- Imagen del cover del video -->
-<img
-  src={`https://drive.google.com/thumbnail?id=${driveId}`}
-  alt="Miniatura del video"
-  class="img-fluid"
-  data-bs-toggle="modal"
-  data-bs-target={`#videoModal-${driveId}`}
-  style="cursor: pointer;"
-/>
-
-<button
-  class="btn btn-primary"
-  data-video={`https://drive.google.com/file/d/${driveId}/preview`}
-  id={`openModalButton${index}`}
->
-  Ver Video {index}
-</button>
+<div class="ratio ratio-16x9">
+  <iframe
+    src="https://player.vimeo.com/video/123456789"
+    title="Video de Vimeo"
+    allowfullscreen
+  >
+  </iframe>
+</div>

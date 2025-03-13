@@ -1,45 +1,47 @@
 ---
-import Seo from "@/components/Seo.astro";
 import Layout from "@/components/Layout.astro";
-import RepairOptions from "@/components/sections/RepairOptions.astro";
-import Video from "@/components/Video.astro";
+import Seo from "@/components/Seo.astro";
 import Hero from "@/components/Hero.astro";
+import Video from "@/components/Video.astro";
+import ButtonWsp from "@/components/ButtonWsp.astro";
 
-import repairs from "@/data/repairs.json";
-import data from "@/data/main.json";
+import data from "@/data";
+const { options: repairs } = data.main;
 
 // Generar las rutas dinámicas
 export async function getStaticPaths() {
   let paths = [];
+  const repairs = data.main.options;
 
-  data.options.forEach((category) => {
+  repairs.forEach((category) => {
     category.options.forEach((repair) => {
       paths.push({
         params: { category: category.key, slug: repair.key },
       });
     });
   });
-
   return paths; // Se devuelve el array directamente
 }
 
 const { category, slug } = Astro.params;
-const { title, subtitle, description, buttonText } = data.options
-  .find((option) => option.key === category)
-  .options.find((option) => option.key === slug);
+const categoryData = repairs.find((option) => option.key === category);
+const repairData = categoryData?.options.find((option) => option.key === slug);
+const { title, subtitle, description, buttonText, msgText } = repairData || {};
 ---
 
-<Seo title={title} description={description} />
-
-<Layout>
+<Layout
+  sections={["topreparations", "aboutrepairs", "calltoaction"]}
+  seoData={{
+    title: title || "Default Title",
+    description: description || "Default Description",
+  }}
+>
   <Hero>
     <div class="row">
       <!-- Columna izquierda -->
-      <div
-        class="col-md-7 d-flex flex-column align-items-center justify-content-center"
-      >
+      <div class="col-md-5 order-md-2 align-items-center">
         <div class="text-center text-white">
-          <h1 class="display-3 text-white mb-3" data-aos="zoom-in">
+          <h1 class=" text-white mb-3" data-aos="zoom-in">
             {title}
           </h1>
           <p
@@ -47,40 +49,24 @@ const { title, subtitle, description, buttonText } = data.options
             data-aos="zoom-in"
             data-aos-delay="200"
           >
-            {subtitle}
+            {description}
           </p>
-
-          <!-- Botón izquierdo (solo en tablet/laptop) -->
-          <a
-            class="btn btn-primary btn-lg mt-2 d-none d-md-block"
-            href="#"
-            role="button"
-          >
-            {buttonText}
-            <i class="fas fa-arrow-right ms-2"></i>
-          </a>
+          <div class="d-none d-md-block">
+          <ButtonWsp msgText="Hola, tengo una consulta.">
+            {buttonText}<i class="fas fa-arrow-right ms-2"></i>
+          </ButtonWsp>
+          </div>
         </div>
       </div>
-
       <!-- Columna derecha -->
-      <div
-        class="col-md-5 d-flex flex-column align-items-center justify-content-center p-2"
-      >
-        <div class="lc-block text-center w-100">
-          <div class="video-container">
-            <Video />
+      <div class="col-md-7 order-md-1">
+        <Video />
+                <!-- Botón derecho (solo en teléfonos) -->
+        <div class="mt-4 d-md-none">
+          <ButtonWsp msgText={msgText}>
+            {buttonText}<i class="fas fa-arrow-right ms-2"></i>
+          </ButtonWsp>
           </div>
-
-          <!-- Botón derecho (solo en teléfonos) -->
-          <a
-            class="btn btn-primary btn-lg mt-4 d-md-none"
-            href="#"
-            role="button"
-          >
-            {buttonText}
-            <i class="fas fa-arrow-right ms-2"></i>
-          </a>
-        </div>
       </div>
     </div>
   </Hero>

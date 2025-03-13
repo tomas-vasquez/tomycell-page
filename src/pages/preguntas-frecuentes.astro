@@ -1,0 +1,64 @@
+---
+import Layout from "@/components/Layout.astro";
+import Hero from "@/components/Hero.astro";
+
+import data from "@/data";
+const { title, description, categoryTitles, questions } =
+  data.frequentQuestions;
+---
+
+<Layout
+  sections={["calltoaction"]}
+  seoData={{ title: title, description: description }}
+>
+  <Hero title={title} seoData={{ title: title, description: description }} />
+  <div class="container">
+    <section class="bg-light py-3 py-md-5">
+      <p class="mb-4">
+        {description}
+      </p>
+
+      <div class="accordion accordion-flush" id="faqAccordion">
+        {
+          Object.entries(questions).map(([category, questions], index) => (
+            <section key={index} class="mb-4">
+              <h2 class="h4">
+                <i class="fas fa-arrow-right me-1" />
+                {categoryTitles[category]}
+              </h2>
+              {questions.map(({ question, answer }, i) => {
+                const id = `faq-${index}-${i}`;
+                return (
+                  <div class="accordion-item">
+                    <h3 class="accordion-header" id={`heading-${id}`}>
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target={`#${id}`}
+                        aria-expanded="false"
+                        aria-controls={id}
+                      >
+                        {question}
+                      </button>
+                    </h3>
+                    <div
+                      id={id}
+                      class="accordion-collapse collapse"
+                      aria-labelledby={`heading-${id}`}
+                      data-bs-parent="#faqAccordion"
+                    >
+                      <div class="accordion-body">
+                        <p>{answer}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </section>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</Layout>

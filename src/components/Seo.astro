@@ -1,33 +1,79 @@
 ---
-// src/components/Seo.astro
-export interface Props {
-  title: string;
-  description: string;
-  image?: string;
-  url?: string;
-}
+import business from "@/data/business.json";
+import data from "@/data"; // Importar faqs.json
 
-const { title, description, image = "/default-image.jpg", url = "https://tomycell.com" } = Astro.props;
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "TomyCell",
-  "description": description,
-  "url": url,
-  "image": "/logo.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Calle Ejemplo #123",
-    "addressLocality": "Bolivia",
-    "addressCountry": "BO"
-  },
-  "telephone": "+591 76897088"
-};
+const { seoData } = Astro.props;
+const { title, description, image = "/logo.jpg", url = "https://tomycell.com" } = seoData;
+
+const { questions } = data.frequentQuestions;
+
+// Verificamos si estamos en la página de servicios o en la página de preguntas frecuentes
+const isServicePage = Astro.url.pathname.includes("/reparar");
+const isFaqPage = Astro.url.pathname.includes("/preguntas");
+
+// JSON-LD para la página de servicios sin precios
+const jsonLd = isServicePage
+  ? {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": title,
+      "provider": {
+        "@type": "Organization",
+        "name": "TomyCell",
+        "url": url,
+        "logo": "https://www.tomycell.com/logo.jpg",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+" + business.phone,
+          "contactType": "Soporte",
+          "areaServed": "BO",
+          "availableLanguage": "Español"
+        }
+      },
+      "description": description,
+      "image": image,
+      "offers": {
+        "@type": "Offer",
+        "url": `${url}/servicios/reparacion`,
+        "eligibleRegion": "BO"
+      },
+      "additionalType": "https://schema.org/Service",
+      "mainEntityOfPage": url
+    }
+  : isFaqPage
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      //"mainEntity": questions.map((faq) => ({
+       // "@type": "Question",
+       // "name": faq.question,
+        //"acceptedAnswer": {
+         // "@type": "Answer",
+         // "text": faq.answer.replace("{{phoneNumber}}", business.phone).replace("{{address}}", `${business.address.streetAddress}, ${business.address.addressLocality}`)
+        //}
+    //  }))
+    }
+  : {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "TomyCell",
+      "description": description,
+      "url": url,
+      "image": image,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": business.address.streetAddress,
+        "addressLocality": business.address.addressLocality,
+        "addressCountry": "BO"
+      },
+      "telephone": business.phone
+    };
 ---
 <head>
   <meta charset="UTF-8" />
-  <title>{"TomyCell - "+title}</title>
+  <title>{"TomyCell - " + title}</title>
   <meta name="description" content={description} />
+  <meta name="theme-color" content="#060c08">
   
   <!-- Open Graph -->
   <meta property="og:title" content={title} />

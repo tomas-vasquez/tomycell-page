@@ -4,20 +4,15 @@
     "href": "/"
   },
   {
-    "text": "Acerca de...",
-    "href": "/about"
+    "text": "Acerca de nosotros",
+    "href": "/acerca-de-nosotros"
   },
   {
-    "text": "Institucional",
-    "href": "/terms"
+    "text": "Servicios",
+    "href": "/servicios"
   },
   {
-    "text": "Blog",
-    "dropdown": [
-      {
-        "text": "hola",
-        "href": "/hola"
-      }
-    ]
+    "text": "Preguntas frecuentes",
+    "href": "/preguntas-frecuentes"
   }
 ]

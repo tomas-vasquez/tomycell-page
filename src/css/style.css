@@ -8,13 +8,27 @@
 
 /* =================== VARIABLES CSS =================== */
 :root {
-  --primary-color: #26ba30; /* Color principal personalizado */
+  --primary-color: #109f30; /* Color principal personalizado */
 }
 
 /* =================== ESTILOS GENERALES =================== */
 body {
-  font-family: "Quicksand", sans-serif;
+  font-family: "nunito";
+  font-size: 18px;
   padding: 0;
+}
+
+p {
+  color: #000000a1 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "quicksand";
+  color: #000000bb !important;
 }
 
 /* =================== TIPOGRAFÍA =================== */
@@ -36,15 +50,15 @@ body {
 
 /* =================== BOTONES =================== */
 .btn {
-  font-family: "Nunito", sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-family: "nunito";
+  font-size: 18px;
   transition: 0.5s;
 }
 
 .btn-primary {
   background-color: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
+  box-shadow:;
 }
 
 .btn-primary:hover {
@@ -82,7 +96,38 @@ body {
   font-weight: normal;
   border-radius: 2px;
 }
+/* Estilo para un botón que parece un enlace */
+.btn-link {
+  background-color: transparent;
+  color: var(
+    --primary-color
+  ); /* Color de texto del enlace (puedes cambiarlo) */
+  border: none;
+  padding: 0;
+  text-decoration: none; /* Elimina el subrayado del texto */
+  font-weight: normal;
+  cursor: pointer;
+  display: inline-block;
+  transition:
+    color 0.3s ease,
+    text-decoration 0.3s ease;
+}
 
+/* Estilo cuando el botón de enlace está en hover */
+.btn-link:hover,
+.btn-link:focus {
+  color: var(
+    --primary-color
+  ); /* Color de texto cuando se pasa el mouse o se tiene el foco */
+  text-decoration: underline; /* Subraya el enlace al pasar el mouse */
+  outline: none; /* Elimina el borde de enfoque por defecto */
+}
+
+/* Estilo para el estado activo del botón */
+.btn-link:active {
+  color: var(--primary-color); /* Color de texto cuando el enlace está activo */
+  text-decoration: underline;
+}
 /* =================== NAVBAR =================== */
 .navbar-dark .navbar-nav .nav-link {
   position: relative;
@@ -103,21 +148,33 @@ body {
 
 /* =================== HERO HEADER =================== */
 .hero-header {
-  background:
-    linear-gradient(rgba(4, 13, 20, 0.9), rgba(4, 13, 20, 0.9)),
-    url(/img/bg-hero.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: 
+    linear-gradient(#000000e0, #080908d9),  /* Gradiente semitransparente */
+    url(/img/bg-hero.jpg); /* Imagen de fondo */
+  background-position: center center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Asegura que la imagen cubra toda el área */
+  background-attachment: fixed; /* Mantiene el fondo fijo mientras se hace scroll */
+  display: flex; /* Usamos Flexbox para centrar el contenido */
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  color: white; /* Color del texto en blanco */
+  text-align: center; /* Centra el texto */
+  padding: 40px 20px; /* Espaciado interno (ajustable) */
 }
-
 /* =================== MODALES =================== */
-#videoModal .modal-dialog {
-  position: relative;
-  max-width: 800px;
-  margin: 60px auto 0 auto;
+.modal-content {
+  background-color: rgba(255, 255, 255, 0); /* Blanco con 50% de opacidad */
 }
-
+/* Modificar el backdrop de Bootstrap */
+.modal-backdrop {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ) !important; /* Negro con 80% de opacidad */
+}
 /* =================== FOOTER =================== */
 .footer .btn.btn-social {
   margin-right: 5px;
@@ -137,26 +194,6 @@ body {
 }
 
 /* =================== SWIPER (CARRUSEL) =================== */
-.swiper-slide {
-  opacity: 0.5; /* Testimonios no activos tienen opacidad reducida */
-  transition:
-    opacity 0.3s ease,
-    transform 0.5s ease; /* Transición para la opacidad y movimiento */
-  transform: scale(0.8); /* Reducir tamaño de los testimonios no activos */
-}
-
-.swiper-slide-active {
-  opacity: 1; /* Testimonio activo con opacidad completa */
-  transform: scale(1); /* Tamaño normal para el testimonio activo */
-}
-
-.swiper-slide-next,
-.swiper-slide-prev {
-  opacity: 0.6; /* Opacidad intermedia para los testimonios próximos y anteriores */
-  transform: scale(
-    0.8
-  ); /* Tamaño reducido para testimonios próximos y anteriores */
-}
 
 /* Asegura que las imágenes del carrusel no se estiren */
 .swiper-slide img {
@@ -176,8 +213,8 @@ body {
 /* Estilo para los puntos de paginación del Swiper */
 .swiper-pagination-bullet {
   background-color: #d8d6d6 !important; /* Color de los puntos de paginación */
-  width: 14px; /* Tamaño de los puntos */
-  height: 14px; /* Tamaño de los puntos */
+  width: 10px; /* Tamaño de los puntos */
+  height: 10px; /* Tamaño de los puntos */
   opacity: 1; /* Mantiene los puntos visibles */
   transition: background-color 0.3s ease; /* Suaviza el cambio de color */
 }
@@ -187,4 +224,24 @@ body {
   background-color: var(
     --primary-color
   ) !important; /* Color más oscuro cuando está activo */
+}
+
+@keyframes palpitar {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-palpitar {
+  animation: palpitar 4s infinite ease-in-out;
+}
+
+.bg-light {
+  background-color: #f4f4f4!important;
 }

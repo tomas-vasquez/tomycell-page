@@ -1,0 +1,21 @@
+{
+  "name": "TomyCell",
+  "short_name": "TomyCell",
+  "description": "Reparación y venta de dispositivos electrónicos - TomyCell",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#040d14",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

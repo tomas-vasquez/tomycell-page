@@ -1,12 +1,8 @@
 // Importaciones de librerías necesarias
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Bootstrap para componentes interactivos
-import * as bootstrap from "bootstrap";
-
 import AOS from "aos"; // Librería para animaciones al hacer scroll
 import Swiper from "swiper"; // Librería para carrusel de testimonios
 import { Pagination, Autoplay } from "swiper/modules"; // Módulos de Swiper
-import L from "leaflet"; // Librería para mapas interactivos
-import { markers } from "@/data/ubication.json"; // Importación de datos de ubicación
 
 // ==================== Configuración del Carrusel (Swiper) ====================
 document.addEventListener("DOMContentLoaded", function () {
@@ -35,42 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }, // En laptop muestra 3 testimonios
     },
     autoplay: {
-      delay: 10000, // Tiempo de espera entre diapositivas
+      delay: 5000, // Tiempo de espera entre diapositivas
       disableOnInteraction: false, // No detener autoplay al interactuar
     },
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Crear el mapa y centrarlo en Santa Cruz con un nivel de zoom de 13
-  var map = L.map("map").setView([-17.7772, -63.181], 13);
-
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  }).addTo(map);
-
-  // Crear un icono personalizado para el marcador
-  var customIcon = L.icon({
-    iconUrl: "/img/map-marker.png", // Ruta de tu imagen
-    iconSize: [32, 52], // Tamaño del icono
-    iconAnchor: [16, 52], // Punto de anclaje del icono
-    popupAnchor: [0, -52], // Posición del popup
-  });
-
-  // Agregar marcadores al mapa
-  markers.forEach(function (lugar) {
-    var googleMapsUrl = `https://maps.google.com/?q=${lugar.lat},${lugar.lon}`; // URL para abrir en Google Maps
-
-    // Crear y añadir marcador con popup informativo usando el icono personalizado
-    L.marker([lugar.lat, lugar.lon], {
-      icon: customIcon,
-    })
-      .addTo(map)
-      .bindPopup(
-        `<b>${lugar.nombre}</b><br>${lugar.descripcion}<br>
-			<a href='${googleMapsUrl}' target='_blank'>Abrir en Google Maps</a>`,
-      );
   });
 });
 
@@ -93,29 +56,5 @@ window.onload = function () {
   });
 };
 
-// ==================== Video Modal ====================
-document.addEventListener("DOMContentLoaded", function () {
-  // Obtén todos los botones que abren el modal
-  const buttons = document.querySelectorAll('[id^="openModalButton"]');
-
-  console.log(buttons);
-  const modal = new bootstrap.Modal(document.getElementById("videoModal"));
-  const iframe = document.getElementById("videoFrame");
-
-  console.log(buttons);
-  // Añade un evento a cada botón para abrir el modal con el video correspondiente
-  buttons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const videoURL = this.getAttribute("data-video"); // Obtén la URL del video
-      iframe.src = videoURL; // Asigna la URL al iframe
-      modal.show(); // Muestra el modal
-    });
-  });
-
-  // Evento para cerrar el modal y limpiar el iframe (evitar que el video siga reproduciéndose)
-  document
-    .getElementById("videoModal")
-    .addEventListener("hidden.bs.modal", function () {
-      iframe.src = ""; // Limpia la URL del iframe
-    });
-});
+import "@/scripts/dialogs.js";
+import "@/scripts/map.js";

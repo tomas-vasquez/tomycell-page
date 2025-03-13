@@ -1,0 +1,65 @@
+{
+  "title": "Preguntas frecuentes",
+  "description": "Aquí encontrarás respuestas a las dudas más comunes sobre nuestros servicios de reparación, venta de dispositivos reacondicionados y financiamiento de reparaciones.",
+  "categoryTitles": {
+    "service": "Sobre nuestro servicio",
+    "pricing": "Sobre nuestros precios",
+    "contact": "Contacto"
+  },
+  "questions": {
+    "service": [
+      {
+        "question": "¿Dónde está ubicado TomyCell?",
+        "answer": "Estamos ubicados en {{address}}. Además, ofrecemos servicio de **recojo y entrega a domicilio**, para que puedas enviar y recibir tus dispositivos sin salir de casa."
+      },
+      {
+        "question": "¿Qué tipos de dispositivos reparan?",
+        "answer": "Reparamos una amplia variedad de dispositivos electrónicos, entre ellos: **celulares**, **tablets**, **laptops**, **consolas de videojuegos**, **smartwatches** y otros dispositivos electrónicos. Nos especializamos en reparar equipos de todas las marcas más populares como Apple, Samsung, Xiaomi, Huawei, entre otras."
+      },
+      {
+        "question": "¿Reparan dispositivos dañados por agua?",
+        "answer": "Sí, ofrecemos servicio de reparación de dispositivos que han sufrido daños por agua. Realizamos una limpieza a fondo de la placa base utilizando tecnología de limpieza ultrasónica para eliminar la humedad y posibles residuos. Sin embargo, la efectividad depende de la gravedad del daño y el tiempo transcurrido desde el contacto con el agua."
+      },
+      {
+        "question": "¿Qué repuestos utilizan para las reparaciones?",
+        "answer": "Utilizamos **repuestos originales** siempre que sea posible. Sin embargo, también ofrecemos repuestos de alta calidad de marcas alternativas, dependiendo de las preferencias y presupuesto del cliente. Siempre te informaremos sobre las opciones disponibles para que puedas tomar una decisión informada."
+      },
+      {
+        "question": "¿Realizan cambios de batería en equipos electrónicos?",
+        "answer": "Sí, realizamos el cambio de batería en celulares, tablets, laptops y otros dispositivos electrónicos. Ofrecemos baterías de alta calidad que ayudarán a restaurar la autonomía original de tu dispositivo."
+      }
+    ],
+    "pricing": [
+      {
+        "question": "¿Cuánto cuesta cambiar una pantalla?",
+        "answer": "El costo de cambiar la pantalla depende del modelo de tu dispositivo. Los precios varían según la marca y el tamaño de la pantalla. Te invitamos a contactarnos con los detalles de tu dispositivo para proporcionarte una cotización exacta."
+      },
+      {
+        "question": "¿Tienen garantía las reparaciones?",
+        "answer": "Sí, todas nuestras reparaciones cuentan con **garantía**. La duración de la garantía depende del tipo de servicio, generalmente ofrecemos una garantía de entre **3 a 6 meses** para las reparaciones más comunes como cambio de pantallas y baterías. La garantía cubre defectos de fabricación o mal funcionamiento relacionado con la reparación."
+      },
+      {
+        "question": "¿Cómo puedo pagar por los servicios?",
+        "answer": "Aceptamos diversos métodos de pago, incluyendo **transferencias bancarias**, **tarjetas de crédito y débito**, y **efectivo**. Además, ofrecemos opciones de financiamiento para que puedas pagar tus reparaciones en cuotas cómodas. Contáctanos para obtener más información sobre los métodos de pago disponibles."
+      },
+      {
+        "question": "¿Ofrecen precios especiales para reparaciones de múltiples dispositivos?",
+        "answer": "Sí, ofrecemos **descuentos especiales** para reparaciones de varios dispositivos al mismo tiempo. Si tienes más de un equipo para reparar, contáctanos para recibir una cotización con descuento."
+      }
+    ],
+    "contact": [
+      {
+        "question": "¿Cómo puedo contactarlos?",
+        "answer": "Puedes comunicarte con nosotros de diversas formas: envíanos un mensaje de **WhatsApp** al {{phoneNumber}}**, o bien, contáctanos a través de nuestras redes sociales. Estamos disponibles para resolver cualquier consulta relacionada con nuestros servicios."
+      },
+      {
+        "question": "¿Tienen atención presencial?",
+        "answer": "Sí, ofrecemos atención presencial en nuestro local en horario de oficina. Puedes visitarnos para hacer consultas, entregar tus dispositivos para reparación o recogerlos cuando estén listos. Asegúrate de confirmar el horario de atención antes de visitarnos."
+      },
+      {
+        "question": "¿Puedo realizar una consulta antes de llevar mi equipo para reparación?",
+        "answer": "¡Por supuesto! Puedes contactarnos previamente para hacer una consulta sobre los problemas de tu equipo. Si lo prefieres, también podemos ofrecerte una **evaluación inicial gratuita** para determinar si es posible realizar una reparación."
+      }
+    ]
+  }
+}

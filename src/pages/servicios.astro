@@ -1,0 +1,50 @@
+---
+import Layout from "@/components/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+import ButtonWsp from "@/components/ButtonWsp.astro";
+
+import data from "@/data";
+const { title, subtitle, description, services } = data.services;
+---
+
+<Layout
+  sections={["calltoaction"]}
+  seoData={{ title: title, description: description }}
+>
+  <Hero title="Servicios" content={subtitle} />
+
+  <div class="bg-light">
+    {
+      services.map((service, index) => (
+        <div
+          class="container pb-5 mb-5 text-center"
+          key={service.title}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          <div class="row ">
+            <div
+              class={`col-md-6 d-flex justify-content-center ${index % 2 !== 0 ? "order-md-2" : ""}`}
+            >
+              <img
+                src={service.img}
+                alt={`Icono de ${service.title.toLowerCase()}`}
+                class="img-fluid"
+              />
+            </div>
+            <div
+              class={`col-md-6 d-flex flex-column justify-content-center mt-md-5 ${index % 2 !== 0 ? "order-md-1" : ""}`}
+            >
+              <SectionTitle title={service.title} />
+              <p>{service.content}</p>
+              <a class="btn btn-primary" href={service.buttonLink}>
+                {service.buttonText}
+              </a>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Layout>

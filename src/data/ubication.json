@@ -1,7 +1,7 @@
 {
   "sectionTitle": "Ubicación",
   "title": "¿Dónde nos encontramos?",
-  "description": "Especialistas en la reparación de equipos electrónicos en Santa Cruz, ofrecemos soluciones confiables para celulares, laptops y más. También realizamos compra y venta de dispositivos reacondicionados, y contamos con servicio de recojo a domicilio.",
+  "description": "<p>Visítanos en el centro de la ciudad para reparar tu equipo con los mejores expertos.</p><p><strong>Dirección:</strong><br>[Inserta la dirección completa]</p><p><strong>Horario:</strong><br>Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábados: 10:00 AM - 2:00 PM</p><p><strong>Contáctanos:</strong><br>Teléfono: [Tu número]</p><p>¡Te esperamos!</p>",
   "markers": [
     {
       "nombre": "Taller principal",

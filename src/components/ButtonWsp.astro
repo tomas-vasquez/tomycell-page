@@ -1,0 +1,15 @@
+---
+const { msgText, isCatalog } = Astro.props;
+---
+
+{
+  isCatalog ? (
+    <a class="whatsapp-catalog-button btn btn-primary">
+      <slot />
+    </a>
+  ) : (
+    <button class="whatsapp-msg-button btn btn-primary" msg-text={msgText}>
+      <slot />
+    </button>
+  )
+}

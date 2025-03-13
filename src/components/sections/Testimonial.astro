@@ -5,61 +5,43 @@ import {
   title,
   subtitle,
 } from "@/data/testimonials.json";
+
+import SectionTitle from "@/components/SectionTitle.astro";
 ---
 
 <!-- Testimonial Start -->
-<div class="container-xxl py-5 bg-light">
+<div class="py-5 bg-light">
   <div class="container">
-    <div class="text-center">
-      <h5
-        class="d-md-none section-title d-flex align-items-center text-primary fs-6"
-      >
-        <span>{sectionTitle}</span>
-        <span class="flex-grow-1 border-bottom border-muted ms-2"></span>
-      </h5>
+    <SectionTitle sectionTitle={sectionTitle} title={title} />
 
-      <h5
-        class="d-none d-md-flex section-title align-items-center text-primary fs-6 justify-content-center"
-      >
-        <span class="border-bottom border-muted" style="width: 100px;"></span>
-        <span class="ms-2 me-2">{sectionTitle}</span>
-        <span class="border-bottom border-muted" style="width: 100px;"></span>
-      </h5>
-
-      <h1 class="fs-2">{title}</h1>
-      <p class="lead fw-normal mb-4 mb-lg-5">{subtitle}</p>
-    </div>
-  </div>
-
-  <div class="swiper p-0">
-    <div class="swiper-wrapper mb-4">
-      <!-- Iterar sobre los testimonios -->
-      {
-        testimonials.map((testimonial, index) => (
-          <div class="swiper-slide">
-            <div
-              class={`testimonial-carousel card ${index === 0 ? "bg-dark text-white" : ""}`}
-            >
-              <div class="testimonial-item bg-transparent border rounded p-4">
-                <i class="fa fa-quote-left fa-2x text-primary mb-3" />
-                <p>{testimonial.testimonial}</p>
-                <div class="d-flex align-items-center">
-                  <img
-                    class="img-fluid flex-shrink-0 rounded-circle"
-                    src={testimonial.image}
-                    style="width: 50px; height: 50px;"
-                  />
-                  <div class="ps-3">
-                    <h5 class="mb-1">{testimonial.name}</h5>
-                    <small>{testimonial.profession}</small>
+    <div class="swiper p-0">
+      <div class="swiper-wrapper mb-4">
+        <!-- Iterar sobre los testimonios -->
+        {
+          testimonials.map((testimonial, index) => (
+            <div class="swiper-slide">
+              <div class={`testimonial-carousel card `}>
+                <div class="testimonial-item bg-transparent border rounded p-4">
+                  <i class="fa fa-quote-left fa-2x text-primary mb-3" />
+                  <p>{testimonial.testimonial}</p>
+                  <div class="d-flex align-items-center">
+                    <img
+                      class="img-fluid flex-shrink-0 rounded-circle"
+                      src={testimonial.image}
+                      style="width: 50px; height: 50px;"
+                    />
+                    <div class="ps-3">
+                      <h5 class="mb-1">{testimonial.name}</h5>
+                      <small>{testimonial.profession}</small>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))
-      }
+          ))
+        }
+      </div>
+      <div class="swiper-pagination d-flex justify-content-center"></div>
     </div>
-    <div class="swiper-pagination d-flex justify-content-center"></div>
   </div>
 </div>

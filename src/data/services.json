@@ -1,0 +1,43 @@
+{
+  "title": "Servicios",
+  "subtitle": "Soluciones rápidas y confiables para tus dispositivos electrónicos",
+  "description": "En TomyCell nos especializamos en la reparación, compra y venta de dispositivos electrónicos. Ofrecemos un servicio técnico de calidad, equipos reacondicionados garantizados y la posibilidad de vender tus celulares averiados. Además, contamos con un cómodo servicio de recogida y entrega a domicilio. ¡Déjanos ayudarte a mantener tus dispositivos en perfecto estado!",
+  "services": [
+    {
+      "title": "Servicio Técnico de Equipos Electrónicos",
+      "content": "En nuestro taller ofrecemos un servicio técnico completo para una amplia gama de dispositivos electrónicos, desde smartphones hasta computadoras y electrodomésticos. Nuestros técnicos altamente capacitados diagnostican y reparan de manera eficiente los problemas comunes como pantallas rotas, fallos de batería, problemas de software y más. ¡Te ayudamos a recuperar el funcionamiento de tus dispositivos en el menor tiempo posible!",
+      "shortDescription": "Reparación rápida y profesional de dispositivos electrónicos, garantizando calidad y rapidez.",
+      "icon": "fas fa-tools",
+      "img": "/svg/phone-repair.svg",
+      "buttonText": "Solicitar reparación",
+      "msgText": "Hola, quiero información sobre Servicio Técnico de Equipos Electrónicos"
+    },
+    {
+      "title": "Venta de Equipos Reacondicionados",
+      "content": "Si buscas dispositivos de calidad a precios accesibles, contamos con una selección de equipos reacondicionados certificados. Nuestros dispositivos pasan por un exhaustivo proceso de revisión, reparación y prueba para asegurarnos de que funcionen como nuevos. Ofrecemos smartphones, laptops y otros dispositivos a precios mucho más bajos que los nuevos, con garantía incluida.",
+      "shortDescription": "Venta de equipos reacondicionados certificados a precios accesibles, con garantía incluida.",
+      "icon": "fas fa-shopping-cart",
+      "img": "/svg/refurbished-device.svg",
+      "buttonText": "Ver catálogo",
+      "msgText": "Hola, quiero información sobre Venta de Equipos Reacondicionados"
+    },
+    {
+      "title": "Compra de Celulares Averiados",
+      "content": "¿Tienes un celular dañado que ya no usas? Te compramos equipos móviles averiados o dañados. Incluso si la pantalla está rota, la batería no carga o el dispositivo no enciende, podemos ofrecerte un precio justo por tu equipo y darle una segunda vida. Contáctanos para saber cuánto puedes obtener por tu celular.",
+      "shortDescription": "Compra de celulares dañados, incluyendo equipos con pantallas rotas, baterías defectuosas o sin encender.",
+      "icon": "fas fa-hand-holding-usd",
+      "img": "/svg/buy-broken-phone.svg",
+      "buttonText": "Cotizar mi equipo",
+      "msgText": "Hola, quiero información sobre Compra de Celulares Averiados"
+    },
+    {
+      "title": "Recogida y Entrega a Domicilio",
+      "content": "En TomyCell, ofrecemos un servicio de recogida y entrega a domicilio para que no tengas que salir de tu casa para reparar tu dispositivo. Solo tienes que llamarnos y coordinaremos la recogida de tu equipo, lo repararemos con el máximo cuidado y te lo entregaremos nuevamente en tu hogar. ¡Es fácil, rápido y cómodo!",
+      "shortDescription": "Recogida y entrega a domicilio de equipos para reparación, con total comodidad y seguridad.",
+      "icon": "fas fa-truck",
+      "img": "/svg/delivery-service.svg",
+      "buttonText": "Agendar servicio",
+      "msgText": "Hola, quiero información sobre Recogida y Entrega a Domicilio"
+    }
+  ]
+}
