@@ -1,7 +1,8 @@
 import Swal from "sweetalert2";
 import data from "@/data";
 
-const { codeArea, workshops } = data.business;
+const { codeArea, workshopsBySection } = data.business;
+const arrow = document.getElementById("arrow-id"); // Flecha que apunta al boton
 
 /**
  * Muestra un cuadro de diálogo con opciones de botones.
@@ -31,6 +32,7 @@ async function showDialog(title, subtitle, options) {
         popup: "swal2-popup-custom bg-dark",
       },
       didOpen: function () {
+        if (arrow) arrow.style.display = "none";
         const buttons = document.querySelectorAll(".swal2-confirm");
         buttons.forEach((button) => {
           button.addEventListener("click", function () {
@@ -49,37 +51,43 @@ async function showDialog(title, subtitle, options) {
  * @param {string} msg - El mensaje que se enviará.
  */
 async function sendWhatsappMessage(msg) {
-  // Verifica si hay más de un departamento
-  let options = Object.keys(workshops);
-  let selectedDepartment;
+  let selectedDepartmentIndex;
 
-  if (options.length === 1) {
+  // Verifica si hay más de un departamento
+  if (workshopsBySection.length === 1) {
     // Si solo hay un departamento, selecciona automáticamente el primero
-    selectedDepartment = options[0];
+    selectedDepartmentIndex = 0;
   } else {
     // Si hay más de uno, muestra el diálogo para seleccionar un departamento
-    let selectedIndex = await showDialog(
+    selectedDepartmentIndex = await showDialog(
       "Contacta con nosotros",
       "Selecciona tu departamento:",
-      options,
+      workshopsBySection.map((s) => s.sectionId),
     );
-    selectedDepartment = options[selectedIndex];
   }
 
-  // Solicita la selección de una sucursal dentro del departamento elegido
-  options = workshops[selectedDepartment].map((workshop) => workshop.title);
-  let selectedIndex = await showDialog(
-    `Sucursales en ${selectedDepartment}`,
-    "Selecciona la sucursal que prefieres:",
-    options,
-  );
-  const selectedWorkshop = workshops[selectedDepartment].find(
-    (w) => w.title === options[selectedIndex],
-  );
+  const selectedDepartment = workshopsBySection[selectedDepartmentIndex];
 
-  // Crea el enlace de WhatsApp y lo abre en una nueva ventana
-  const whatsappLink = `https://wa.me/${codeArea}${selectedWorkshop.phone}?text=${encodeURIComponent(msg)}`;
-  window.open(whatsappLink, "_blank");
+  // Verifica si solo hay un taller en el departamento seleccionado
+  if (selectedDepartment.workshops.length === 1) {
+    const selectedWorkshop = selectedDepartment.workshops[0];
+    const whatsappLink = `https://wa.me/${codeArea}${selectedWorkshop.phone}?text=${encodeURIComponent(msg)}`;
+    window.open(whatsappLink, "_blank");
+  } else {
+    // Si hay más de un taller, solicita que se seleccione uno
+    const workshopsTitles = selectedDepartment.workshops.map(
+      (w) => w.workshopId,
+    );
+    let selectedIndex = await showDialog(
+      `Sucursales en ${selectedDepartment.sectionId}`,
+      "Selecciona la sucursal que prefieres:",
+      workshopsTitles,
+    );
+
+    const selectedWorkshop = selectedDepartment.workshops[selectedIndex];
+    const whatsappLink = `https://wa.me/${codeArea}${selectedWorkshop.phone}?text=${encodeURIComponent(msg)}`;
+    window.open(whatsappLink, "_blank");
+  }
 }
 
 /**
@@ -87,13 +95,12 @@ async function sendWhatsappMessage(msg) {
  * @param {string} msg - El mensaje que se enviará.
  */
 async function openWhatsappCatalog() {
-  // Verifica si hay más de un departamento
-  let options = Object.keys(workshops);
-  let selectedDepartment;
+  let options = workshopsBySection.map((s) => s.sectionId);
+  let selectedDepartmentIndex;
 
   if (options.length === 1) {
     // Si solo hay un departamento, selecciona automáticamente el primero
-    selectedDepartment = options[0];
+    selectedDepartmentIndex = options[0];
   } else {
     // Si hay más de uno, muestra el diálogo para seleccionar un departamento
     let selectedIndex = await showDialog(
@@ -101,16 +108,26 @@ async function openWhatsappCatalog() {
       "Selecciona tu departamento:",
       options,
     );
-    selectedDepartment = options[selectedIndex];
+    selectedDepartmentIndex = options[selectedIndex];
   }
 
-  var selectedMainBranch = workshops[selectedDepartment].find(
-    (w) => w.isMainBranch === true,
+  const selectedDepartment = workshopsBySection.find(
+    (s) => s.sectionId === selectedDepartmentIndex,
   );
 
-  // Crea el enlace de WhatsApp y lo abre en una nueva ventana
-  const whatsappLink = `https://wa.me/c/${codeArea}${selectedMainBranch.phone}`;
-  window.open(whatsappLink, "_blank");
+  // Verifica si solo hay un taller principal en el departamento
+  if (selectedDepartment.workshops.length === 1) {
+    const selectedWorkshop = selectedDepartment.workshops[0];
+    const whatsappLink = `https://wa.me/c/${codeArea}${selectedWorkshop.phone}`;
+    window.open(whatsappLink, "_blank");
+  } else {
+    var selectedMainBranch = selectedDepartment.workshops.find(
+      (w) => w.isMainBranch === true,
+    );
+
+    const whatsappLink = `https://wa.me/c/${codeArea}${selectedMainBranch.phone}`;
+    window.open(whatsappLink, "_blank");
+  }
 }
 
 /**

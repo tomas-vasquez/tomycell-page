@@ -2,58 +2,57 @@
   "phone": "76897088",
   "codeArea": "591",
   "email": "tomycell@tomycell",
+  "social":[
+    {
+      "name":"tiktok",
+      "link":"http://wa.me/*28",
+      "icon":"fab fa-tiktok"
+    },    
+    {
+      "name":"facebook",
+      "link":"http://wa.me/*28",
+      "icon":"fab fa-facebook"
+    },
+    {
+      "name":"instagram",
+      "link":"http://wa.me/*28",
+      "icon":"fab fa-instagram"
+    }
+  ],
   "address": {
     "streetAddress": "Calle Muchiri N°233",
     "addressLocality": "Santa Cruz - Bolivia"
   },
-  "departments": [
+  "workshopsBySection": [
     {
-      "id": "La Paz",
-      "lat": -16.5,
-      "lon": -68.1193
+      "sectionId": "Santa Cruz",
+      "lat": -17.7833,
+      "lon": -63.1821,
+      "workshops": [
+        {
+          "workshopId": "Sucursal Ramada",
+          "phone": "76897088",
+          "isMainBranch": true,
+          "streetAddress": "Calle Muchiri N°233",
+          "lat": -17.78125,
+          "lon": -63.1793
+        }
+      ]
     },
     {
-      "id": "Santa Cruz",
-      "lat": -17.7833,
-      "lon": -63.1821
+      "sectionId": "La Paz",
+      "lat": -16.5,
+      "lon": -68.1193,
+      "workshops": [
+        {
+          "workshopId": "Sucursal La Paz",
+          "phone": "76897088",
+          "isMainBranch": false,
+          "streetAddress": "Av. Mariscal Santa Cruz N°1364",
+          "lat": -16.5,
+          "lon": -68.1192
+        }
+      ]
     }
-  ],
-  "workshops": {
-    "Santa Cruz": [
-      {
-        "title": "Sucursal Ramada",
-        "phone": "76897088",
-        "isMainBranch": true,
-        "streetAddress": "Calle Muchiri N°233",
-        "lat": -17.78125,
-        "lon": -63.1793
-      },
-      {
-        "title": "Sucursal Los Pozos",
-        "phone": "22222222",
-        "isMainBranch": false,
-        "streetAddress": "Calle Muchiri N°233",
-        "lat": -16.78123,
-        "lon": -62.1793
-      }
-    ],
-    "La Paz": [
-      {
-        "title": "Sucursal Jaja",
-        "isMainBranch": true,
-        "phone": "333333333",
-        "streetAddress": "Calle Muchiri N°ydyd233",
-        "lat": -16.5,
-        "lon": -68.15
-      },
-      {
-        "title": "Sucursal Ramadanms",
-        "isMainBranch": false,
-        "phone": "44444444",
-        "streetAddress": "Calle Muchiri N°233",
-        "lat": -16.5,
-        "lon": -68.15
-      }
-    ]
-  }
+  ]
 }

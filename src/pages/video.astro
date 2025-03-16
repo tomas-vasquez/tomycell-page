@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      .contenedor {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border: 1px solid #ccc; /* Solo para visualizar el contenedor */
+        padding: 20px;
+        box-sizing: border-box; /* Asegura que el padding no afecte el ancho y alto */
+      }
+
+      .contenedor::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("/img/arrow.gif"); /* Reemplaza 'tu-imagen.jpg' con la ruta de tu imagen */
+        background-size: cover;
+        transform: rotate(
+          90deg
+        ); /* Ajusta el ángulo de rotación según sea necesario */
+        transform-origin: 50% 50%; /* Asegura que la rotación sea desde el centro */
+        z-index: -1;
+      }
+
+      .contenedor p {
+        position: relative; /* Asegura que el texto esté encima del pseudo-elemento */
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <p>Este es el contenido del contenedor.</p>
+    </div>
+  </body>
+</html>

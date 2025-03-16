@@ -1,22 +1,15 @@
 ---
-import {
-  sectionTitle,
-  title,
-  description,
-  counterData,
-  butonnText,
-  msgText,
-} from "@/data/about.json";
-
 import { Image } from "astro:assets";
 import SectionTitle from "@/components/SectionTitle.astro";
-import ButtonWsp from "@/components/ButtonWsp.astro";
+
+import data from "@/data";
+const { sectionTitle, title, description } = data.about;
+const { workshopsBySection } = data.business;
 ---
 
-<div class="pb-5 pb-md-0">
-  <div class="container align-items-center">
+  <div class="container align-items-center" style="overflow: hidden;">
     <div class="row align-items-center">
-      <div class="col-lg-6">
+      <div class="col-lg-6" data-aos="fade-up">
         <Image
           class="img-fluid rounded w-100"
           src="/svg/mobile.svg"
@@ -26,35 +19,32 @@ import ButtonWsp from "@/components/ButtonWsp.astro";
         />
       </div>
       <div class="col-lg-6">
-        <SectionTitle sectionTitle={sectionTitle} title={title} />
-
-        <p class="mb-4">
-          {description}
-        </p>
-
-        <div class="row">
-          {
-            counterData.map((item, index) => (
-              <div class="col-6 mb-5" key={index}>
-                <div class="d-flex align-items-center border-start border-5 border-primary px-2">
-                  <h1 class="display-5 text-primary mb-0" data-aos="zoom-in">
-                    {item.value}
-                  </h1>
-                  <div class="ps-2">
-                    <p class="mb-0">{item.label_1}</p>
-                    <h6 class="text-uppercase mb-0">{item.label_2}</h6>
-                  </div>
-                </div>
-              </div>
-            ))
-          }
+        <div data-aos="fade-right">
+          <SectionTitle sectionTitle={sectionTitle} title={title} />
         </div>
-        <div class="text-center">
-          <ButtonWsp msgText={msgText}>
-            {butonnText}<i class="fab fa-whatsapp ms-2"></i>
-          </ButtonWsp>
+        <div data-aos="fade-left">
+          <p class="m-0">
+            {description}
+          </p>
+          <div class="card w-100 bg-light mt-4 mb-5">
+            <div class="card-body text-center">
+              <div class="fs-4">
+                <h3 class="me-4 fw-bold fs-5 lh-lg">
+                  Estamos en:
+                  <br class="d-md-none" />
+                  {
+                    workshopsBySection.map(s => (
+                      <span class="mx-2" key={s.sectionId}>
+                        <i class="fa fa-map-marker-alt me-1 lead" />
+                        {s.sectionId}
+                      </span>
+                    ))
+                  }
+                </h3>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>

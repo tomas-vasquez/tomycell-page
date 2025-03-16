@@ -2,122 +2,123 @@
   "title": "¿Quieres reparar tu equipo?",
   "subtitle": "Selecciona el tipo de tu dispositivo:",
   "description": "TomyCell ofrece servicio de reparación de celulares, laptops y otros dispositivos en Bolivia. Expertos en cambio de pantallas, baterías y más.",
-  "options": [
+  "repairsByCategory": [
     {
-      "key": "celular",
+      "categoryId": "celular",
       "title": "Reparaciones de Celulares",
       "subtitle": "Selecciona el problema de tu celular:",
       "sectionTitle": "¿Qué problema tiene tu celular?",
       "description": "Servicio especializado en reparación de celulares: cambio de pantalla, batería, altavoz y más. Atención rápida y profesional.",
       "icon": "fas fa-mobile-alt",
-      "options": [
+      "repairs": [
         {
-          "key": "pantalla",
+          "repairsId": "pantalla",
           "title": "Pantalla quebrada",
           "subtitle": "Reemplazo de pantalla completa",
           "description": "Cambio de pantalla para celulares con daños graves. Usamos pantallas originales y garantizamos la reparación.",
-          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
           "buttonText": "Quiero cambiar mi pantalla",
-          "msgText": "Hola, quiero cambiar la pantalla de mi celular."
+          "msgText": "Hola, quiero cambiar la pantalla de mi celular.",
+          "vimeoId": 1065917652
         },
         {
-          "key": "glass",
-          "title": "Glass quebrado",
-          "subtitle": "Reemplazo de vidrio frontal",
-          "description": "Reemplazo de glass para celulares con pantalla quebrada. Mantén la calidad de tu equipo con repuestos originales.",
-          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero cambiar mi glass",
-          "msgText": "Hola, quiero cambiar el glass de mi celular."
-        },
-        {
-          "key": "bateria",
+          "repairsId": "bateria",
+          "repairsId": "bateria",
           "title": "Batería dañada",
           "subtitle": "Reemplazo de batería",
           "description": "Cambio de batería para mejorar la autonomía de tu celular. Baterías originales y compatibles con tu equipo.",
-          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
           "buttonText": "Quiero cambiar mi batería",
-          "msgText": "Hola, quiero cambiar la batería de mi celular."
+          "msgText": "Hola, quiero cambiar la batería de mi celular.",
+          "vimeoId": 1065917652
         },
         {
-          "key": "carga",
+          "repairsId": "carga",
           "title": "Problemas de carga",
           "subtitle": "Reparación del puerto de carga",
           "description": "Si tu celular no carga o lo hace intermitentemente, reparamos o cambiamos el puerto de carga.",
-          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
           "buttonText": "Quiero reparar el puerto de carga",
-          "msgText": "Hola, mi celular tiene problemas de carga. ¿Pueden ayudarme?"
+          "msgText": "Hola, mi celular tiene problemas de carga. ¿Pueden ayudarme?",
+          "vimeoId": 1065917652
         },
         {
-          "key": "altavoz",
-          "title": "Altavoz o micrófono defectuoso",
+          "repairsId": "altavoz",
+          "title": "Altavoz o micrófono",
           "subtitle": "Reparación o reemplazo",
           "description": "Solucionamos problemas de sonido en llamadas, altavoz o micrófono defectuoso.",
-          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
           "buttonText": "Quiero reparar mi altavoz o micrófono",
-          "msgText": "Hola, mi celular tiene problemas con el sonido. ¿Pueden revisarlo?"
+          "msgText": "Hola, mi celular tiene problemas con el sonido. ¿Pueden revisarlo?",
+          "vimeoId": 1065917652
         },
         {
-          "key": "botones",
+          "repairsId": "botones",
           "title": "Botones dañados",
           "subtitle": "Reparación de botones de encendido o volumen",
           "description": "Reparación o cambio de botones que no responden o están atascados.",
-          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
           "buttonText": "Quiero reparar los botones de mi celular",
-          "msgText": "Hola, los botones de mi celular no funcionan. ¿Pueden repararlos?"
+          "msgText": "Hola, los botones de mi celular no funcionan. ¿Pueden repararlos?",
+          "vimeoId": 1065917652
         },
         {
-          "key": "camara",
+          "repairsId": "camara",
           "title": "Cámara dañada",
           "subtitle": "Reemplazo o reparación de cámara",
           "description": "Si tu cámara toma fotos borrosas o no funciona, reparamos o cambiamos el módulo de la cámara.",
-          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
           "buttonText": "Quiero reparar mi cámara",
-          "msgText": "Hola, mi cámara no funciona correctamente. ¿Pueden ayudarme?"
+          "msgText": "Hola, mi cámara no funciona correctamente. ¿Pueden ayudarme?",
+          "vimeoId": 1065917652
         },
         {
-          "key": "sensor",
-          "title": "Sensor de proximidad o huella fallando",
-          "subtitle": "Reemplazo o calibración",
-          "description": "Si tu sensor de proximidad o lector de huellas no funciona correctamente, lo calibramos o reemplazamos.",
-          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero reparar mi sensor",
-          "msgText": "Hola, mi sensor de proximidad o huella no funciona bien. ¿Pueden revisarlo?"
-        }
-      ]
-    },
-    {
-      "key": "laptop",
-      "title": "Reparaciones de Laptops",
-      "subtitle": "Selecciona el tipo de reparación para tu laptop:",
-      "description": "Expertos en reparación de laptops: cambio de pantalla, batería, teclado y problemas de carga. Servicio garantizado.",
-      "icon": "fas fa-laptop",
-      "options": [
+          "repairsId": "agua",
+          "title": "Daños por agua",
+          "subtitle": "Reparación por exposición al agua",
+          "description": "Reparación de equipos dañados por agua. Diagnosticamos y ofrecemos limpieza de la placa base.",
+          "buttonText": "Quiero reparar mi celular por daños de agua",
+          "msgText": "Hola, mi celular ha estado expuesto al agua. ¿Pueden repararlo?",
+          "vimeoId": 1065917652
+        },
         {
-          "key": "reemplazo-de-pantalla",
-          "title": "Reemplazo de pantalla",
-          "subtitle": "Reemplazo de pantalla dañada",
-          "description": "Reemplazamos pantallas de laptops dañadas con repuestos de alta calidad. Servicio rápido y profesional.",
-          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero cambiar mi pantalla",
-          "msgText": "Hola, quiero cambiar la pantalla de mi laptop."
-        }
-      ]
-    },
-    {
-      "key": "otro",
-      "title": "Otros Dispositivos",
-      "subtitle": "Selecciona la reparación que necesitas:",
-      "description": "Reparamos impresoras, electrodomésticos y otros dispositivos electrónicos. Diagnóstico y solución rápida.",
-      "icon": "fas fa-tools",
-      "options": [
+          "repairsId": "wifi",
+          "title": "Problemas de Wi-Fi",
+          "subtitle": "Reparación de antena Wi-Fi o software",
+          "description": "Solucionamos problemas de conexión Wi-Fi, reparando o configurando la antena o el software.",
+          "buttonText": "Quiero reparar mi Wi-Fi",
+          "msgText": "Hola, mi celular no se conecta a Wi-Fi. ¿Pueden ayudarme?",
+          "vimeoId": 1065917652
+        },
         {
-          "key": "impresoras",
-          "title": "Reparación de impresoras",
-          "subtitle": "Reparación de impresoras dañadas",
-          "description": "Reparación de impresoras con problemas de impresión, atascos de papel y fallas electrónicas.",
-          "driveVideoId": "1-18Hd6xL95c9DtZdRewVAB8zBwr7_zxw",
-          "buttonText": "Quiero reparar mi impresora",
-          "msgText": "Hola, mi impresora tiene problemas. ¿Pueden revisarla?"
+          "repairsId": "microusb",
+          "title": "Puerto micro USB dañado",
+          "subtitle": "Reemplazo de puerto de carga",
+          "description": "Reemplazo del puerto micro USB dañado. Reparación rápida y eficiente.",
+          "buttonText": "Quiero reparar mi puerto micro USB",
+          "msgText": "Hola, el puerto micro USB de mi celular está dañado. ¿Pueden repararlo?",
+          "vimeoId": 1065917652
+        },
+        {
+          "repairsId": "software",
+          "title": "Fallas de software",
+          "subtitle": "Optimización y reparación de sistema",
+          "description": "Si tu celular está lento, se congela o tiene errores, optimizamos y reparamos el sistema operativo.",
+          "buttonText": "Quiero optimizar mi celular",
+          "msgText": "Hola, mi celular está muy lento y falla. ¿Pueden revisarlo?",
+          "vimeoId": 1065917652
+        },
+        {
+          "repairsId": "sim",
+          "title": "Problemas con la señal",
+          "subtitle": "Reparación de antena o lector de SIM",
+          "description": "Si tu celular no reconoce la SIM o tiene problemas de señal, reparamos el lector de SIM o la antena de red.",
+          "buttonText": "Quiero reparar la señal de mi celular",
+          "msgText": "Hola, mi celular no tiene señal o no detecta la SIM. ¿Pueden ayudarme?",
+          "vimeoId": 1065917652
+        },
+        {
+          "repairsId": "reinicio",
+          "title": "Reinicio o apagado inesperado",
+          "subtitle": "Diagnóstico y reparación de fallas eléctricas o de software",
+          "description": "Si tu celular se apaga solo o se reinicia constantemente, diagnosticamos y reparamos la falla.",
+          "buttonText": "Quiero reparar mi celular",
+          "msgText": "Hola, mi celular se reinicia solo o se apaga. ¿Pueden revisarlo?",
+          "vimeoId": 1065917652
         }
       ]
     }

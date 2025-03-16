@@ -6,67 +6,77 @@ import Video from "@/components/Video.astro";
 import ButtonWsp from "@/components/ButtonWsp.astro";
 
 import data from "@/data";
-const { options: repairs } = data.main;
+const { repairsByCategory } = data.main; // Adaptado al nuevo JSON
 
 // Generar las rutas dinámicas
 export async function getStaticPaths() {
   let paths = [];
-  const repairs = data.main.options;
-
-  repairs.forEach((category) => {
-    category.options.forEach((repair) => {
+  let repairsByCategory = data.main.repairsByCategory;
+  // Iteramos sobre las categorías y las reparaciones
+  repairsByCategory.forEach((category) => {
+    category.repairs.forEach((repair) => {
       paths.push({
-        params: { category: category.key, slug: repair.key },
+        params: { category: category.categoryId, slug: repair.repairsId }, // Usamos categoryId y repairsId
       });
     });
   });
-  return paths; // Se devuelve el array directamente
+  return paths;
 }
 
 const { category, slug } = Astro.params;
-const categoryData = repairs.find((option) => option.key === category);
-const repairData = categoryData?.options.find((option) => option.key === slug);
-const { title, subtitle, description, buttonText, msgText } = repairData || {};
+
+const categoryData = repairsByCategory.find((c) => c.categoryId === category);
+
+const repairData = categoryData?.repairs.find((r) => r.repairsId === slug);
+const { title, subtitle, description, vimeoId, buttonText, msgText } =
+  repairData || {};
 ---
 
 <Layout
-  sections={["topreparations", "aboutrepairs", "calltoaction"]}
+  sections={["aboutrepairs", "calltoaction"]}
   seoData={{
     title: title || "Default Title",
     description: description || "Default Description",
   }}
 >
   <Hero>
-    <div class="row">
-      <!-- Columna izquierda -->
-      <div class="col-md-5 order-md-2 align-items-center">
-        <div class="text-center text-white">
-          <h1 class=" text-white mb-3" data-aos="zoom-in">
-            {title}
-          </h1>
-          <p
-            class="text-white mb-4 pb-2"
-            data-aos="zoom-in"
-            data-aos-delay="200"
-          >
-            {description}
-          </p>
-          <div class="d-none d-md-block">
-          <ButtonWsp msgText="Hola, tengo una consulta.">
-            {buttonText}<i class="fas fa-arrow-right ms-2"></i>
-          </ButtonWsp>
+    <div class="mx-auto" style="max-width: 600px">
+      <div class="row">
+        <!-- Columna izquierda -->
+        <div class="col-md-7 order-md-2 align-items-center">
+          <div class="text-center text-white mt-md-5">
+            <h1 class="text-white mb-3" data-aos="zoom-in">
+              {title}
+            </h1>
+            <p
+              class="text-white mb-4 pb-2"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              {description}
+            </p>
+
+            <div class="d-none d-md-block">
+              <div id="arrow-target-in-laptop" class="w-auto">
+                <ButtonWsp msgText={msgText || "Hola, tengo una consulta."}>
+                  {buttonText || "Más información"}
+                  <i class="fas fa-arrow-right ms-2"></i>
+                </ButtonWsp>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Columna derecha -->
-      <div class="col-md-7 order-md-1">
-        <Video />
-                <!-- Botón derecho (solo en teléfonos) -->
-        <div class="mt-4 d-md-none">
-          <ButtonWsp msgText={msgText}>
-            {buttonText}<i class="fas fa-arrow-right ms-2"></i>
-          </ButtonWsp>
+        <!-- Columna derecha -->
+        <div class="col-md-5 order-md-1 p-0">
+          <Video vimeoId={vimeoId} />
+          <!-- Botón derecho (solo en teléfonos) -->
+          <div id="arrow-target-in-mobile" class="d-md-none mt-2">
+            <ButtonWsp msgText={msgText || "Hola, tengo una consulta."}>
+              {buttonText || "Más información"}
+              <i class="fas fa-arrow-right ms-2"></i>
+            </ButtonWsp>
           </div>
+        </div>
       </div>
     </div>
   </Hero>

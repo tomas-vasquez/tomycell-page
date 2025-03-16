@@ -16,6 +16,7 @@ body {
   font-family: "nunito";
   font-size: 18px;
   padding: 0;
+  overflow-x: hidden;
 }
 
 p {
@@ -148,9 +149,9 @@ h5 {
 
 /* =================== HERO HEADER =================== */
 .hero-header {
-  background: 
-    linear-gradient(#000000e0, #080908d9),  /* Gradiente semitransparente */
-    url(/img/bg-hero.jpg); /* Imagen de fondo */
+  background:
+    linear-gradient(#000000e0, #080908d9),
+    /* Gradiente semitransparente */ url(/img/bg-hero.jpg); /* Imagen de fondo */
   background-position: center center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   background-size: cover; /* Asegura que la imagen cubra toda el área */
@@ -243,5 +244,44 @@ h5 {
 }
 
 .bg-light {
-  background-color: #f4f4f4!important;
+  background-color: #f4f4f4 !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+/*START FOOTER SOCIAL DESIGN*/
+.footer_profile ul {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+.footer_profile ul li {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 480px) {
+  .footer_profile ul li {
+    margin: 2px;
+  }
+}
+.footer_profile ul li a img {
+  width: 60px;
+}
+
+.footer_profile ul li a {
+  background: var(--primary-color);
+  width: 40px;
+  height: 40px;
+  display: block;
+  text-align: center;
+  margin-right: 5px;
+  border-radius: 50%;
+  line-height: 40px;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #fff;
 }

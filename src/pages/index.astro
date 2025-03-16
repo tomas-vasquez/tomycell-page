@@ -1,28 +1,26 @@
 ---
-import Seo from "@/components/Seo.astro";
 import Layout from "@/components/Layout.astro";
 import Hero from "@/components/Hero.astro";
-import data from "@/data"
+import data from "@/data"; // Asegúrate de que la ruta sea correcta
 
-const { title, subtitle, description, options } = data.main;
+// Desestructura los datos necesarios
+const { title, subtitle, description, repairsByCategory } = data.main;
 ---
 
 <Layout
-  sections={[
-    "about",
-    "availabledepartments",
-    "services",
-    "calltoaction",
-    "ubication",
-  ]}
+  sections={["about", "services", "calltoaction", "ubication"]}
   seoData={{ title: title, description: description }}
 >
   <Hero title={title} content={subtitle}>
     {
-      options.map((option) => (
-        <a class="btn btn-primary px-4 m-2" href={`/reparar/${option.key}`}>
-          <i class={option.icon + " me-2"} />
-          {option.key.charAt(0).toUpperCase() + option.key.slice(1)}
+      repairsByCategory.map((option) => (
+        <a
+          class="btn btn-primary px-4 m-2"
+          href={`/reparar/${option.categoryId}`}
+        >
+          <i class={`${option.icon} me-2`} />
+          {option.categoryId.charAt(0).toUpperCase() +
+            option.categoryId.slice(1)}
         </a>
       ))
     }

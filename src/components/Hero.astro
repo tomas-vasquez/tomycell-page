@@ -3,17 +3,17 @@ const { title, content } = Astro.props;
 ---
 
 <div class="py-5 hero-header">
-  <div class="container text-center py-4">
+  <div class="container-sm text-center py-4">
     {
       title && (
-        <h1 class="display-3 text-white mb-3" data-aos="zoom-in">
+        <h1 id="element" class="display-3 text-light mb-3 fw-bold " data-aos="zoom-in">
           {title}
         </h1>
       )
     }
     {
       content && (
-        <p class="text-white mb-4 pb-2" data-aos="zoom-in" data-aos-delay="200">
+        <p class="text-white mb-4 pb-2 small" data-aos="zoom-in" data-aos-delay="200">
           {content}
         </p>
       )
@@ -21,3 +21,8 @@ const { title, content } = Astro.props;
     <slot />
   </div>
 </div>
+
+<script>
+  
+
+</script>

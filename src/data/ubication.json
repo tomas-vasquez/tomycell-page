@@ -1,7 +1,7 @@
 {
   "sectionTitle": "Ubicación",
   "title": "¿Dónde nos encontramos?",
-  "description": "<p>Visítanos en el centro de la ciudad para reparar tu equipo con los mejores expertos.</p><p><strong>Dirección:</strong><br>[Inserta la dirección completa]</p><p><strong>Horario:</strong><br>Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábados: 10:00 AM - 2:00 PM</p><p><strong>Contáctanos:</strong><br>Teléfono: [Tu número]</p><p>¡Te esperamos!</p>",
+  "description": "Encuéntranos en las principales ciudades para brindarte el mejor servicio de reparación y venta de dispositivos reacondicionados. Contamos con talleres en cuatro ciudades y ofrecemos recojo y entrega a domicilio para tu comodidad.",
   "markers": [
     {
       "nombre": "Taller principal",

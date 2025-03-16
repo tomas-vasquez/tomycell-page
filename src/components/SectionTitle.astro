@@ -3,22 +3,20 @@ const { sectionTitle, title, subtitle } = Astro.props;
 ---
 
 <div class="mb-4">
-	{sectionTitle && (
-  <h4
-    class="d-md-none section-title d-flex align-items-center text-primary fs-6 fw-"
-  >
-    <span class="text-start">{sectionTitle}</span>
-    <span class="flex-grow-1 border-bottom border-muted ms-2"></span>
-  </h4>
-  <h4
-    class="d-none d-md-flex section-title align-items-center text-primary fs-6 justify-content-center"
-  >
-    <span class="border-bottom border-muted" style="width: 100px;"></span>
-    <span class="ms-2 me-2">{sectionTitle}</span>
-    <span class="border-bottom border-muted" style="width: 100px;"></span>
-  </h4>
-	)}
-	{title && (
-  <h2 class="fs-1 text-md-center">{title}</h2>
-	)}
+  {
+    sectionTitle && (
+      <>
+        <h4 class="d-md-none section-title d-flex align-items-center text-primary fs-6 ">
+          <span class="text-start">{sectionTitle}</span>
+          <span class="flex-grow-1 border-bottom border-muted ms-2" />
+        </h4>
+        <h4 class="d-none d-md-flex section-title align-items-center text-primary fs-6 justify-content-center">
+          <span class="border-bottom border-muted" style="width: 100px;" />
+          <span class="ms-2 me-2">{sectionTitle}</span>
+          <span class="border-bottom border-muted" style="width: 100px;" />
+        </h4>
+      </>
+    )
+  }
+  {title && <h2 class="fs-1 text-md-center">{title}</h2>}
 </div>

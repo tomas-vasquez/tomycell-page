@@ -1,5 +1,5 @@
 ---
-import ButtonWsp from "@/components/ButtonWsp.astro"
+import ButtonWsp from "@/components/ButtonWsp.astro";
 import navLinks from "../data/nav-links.json"; // Asegúrate de la ruta correcta
 ---
 
@@ -8,8 +8,8 @@ import navLinks from "../data/nav-links.json"; // Asegúrate de la ruta correcta
     class="navbar navbar-expand-md navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0"
   >
     <a href="/" class="navbar-brand p-0">
-      <h1 class="text-light m-0">
-        <i class="fa fa-mobile-alt me-2"></i>Tomy<span class="text-primary"
+      <h1 class="text-light m-0 fw-bold">
+        <i class="fa fa-mobile-alt me-1"></i>Tomy<span class="text-primary"
           >Cell</span
         >
       </h1>
@@ -55,10 +55,9 @@ import navLinks from "../data/nav-links.json"; // Asegúrate de la ruta correcta
         }
       </div>
       <div class="ms-2 mt-3 mt-md-0">
-        
-      <ButtonWsp isCatalog>
-        Tienda<i class="fas fa-shopping-cart ms-2"></i>
-      </ButtonWsp>
+        <ButtonWsp isCatalog>
+          Tienda<i class="fas fa-shopping-cart ms-2"></i>
+        </ButtonWsp>
       </div>
     </div>
   </nav>

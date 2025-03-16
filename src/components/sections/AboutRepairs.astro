@@ -5,22 +5,27 @@ import data from "@/data";
 const { title, img, content, buttonText, msgText } = data.services.services[0];
 ---
 
-<div
-  class="container py-0 text-center"
-  data-aos="fade-up"
-  data-aos-duration="1000"
->
+<div class="container py-5 text-center" style="overflow: hidden;">
   <div class="row">
     <div class={`col-md-6 d-flex justify-content-center`}>
-      <img src={img} class="img-fluid" />
+      <img src={img} class="img-fluid mb-3 mb-md-0" data-aos="fade-up" />
     </div>
-    <div class={`col-md-6 d-flex flex-column justify-content-center mt-md-5`}>
-      <SectionTitle title={title} />
-      <p>{content}</p>
-      <ButtonWsp msgText={msgText}>
-        {buttonText}
-        <i class="fas fa-arrow-right ms-2"></i>
-      </ButtonWsp>
+    <div class={`col-md-6  mt-md-5`}>
+      <div data-aos="fade-right">
+        <SectionTitle
+          sectionTitle="Atencion al cliente"
+          title="¿Quieres que reparemos tu equipo?"
+        />
+      </div>
+      <div data-aos="fade-left">
+        <p>
+          {content}
+        </p>
+        <ButtonWsp msgText={msgText}>
+          {buttonText}
+          <i class="fas fa-arrow-right ms-2"></i>
+        </ButtonWsp>
+      </div>
     </div>
   </div>
 </div>

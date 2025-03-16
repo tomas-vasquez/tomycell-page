@@ -5,28 +5,44 @@ import data from "@/data";
 
 // Generar las rutas dinámicas
 export async function getStaticPaths() {
-  const categories = data.main.options;
-  return categories.map((c) => ({
-    params: { category: c.key, title: c.key }, // Asegúrate de pasar 'category' como un objeto
+  const categories = data.main.repairsByCategory; // Usamos repairsByCategory en lugar de options
+  return categories.map((category) => ({
+    params: { category: category.categoryId }, // Usamos categoryId para la ruta
   }));
 }
 
-const { options: categories } = data.main;
+const { repairsByCategory } = data.main; // Accedemos a repairsByCategory
 const { category } = Astro.params;
-const { title, subtitle, options } =
-  categories.find((option) => option.key === category) || {};
+const categoryData = repairsByCategory.find(
+  (cat) => cat.categoryId === category,
+); // Buscamos la categoría por categoryId
+const { title, subtitle, repairs } = categoryData || {}; // Accedemos a los datos de la categoría y reparaciones
 ---
 
 <Layout
-  sections={["topreparations", "aboutrepairs", "calltoaction"]}
+  sections={["aboutrepairs", "calltoaction"]}
   seoData={{ title: title, description: subtitle }}
 >
   <Hero title={title} content={subtitle}>
     {
-      options.map((repair) => (
+      repairs?.map((repair) => (
         <a
+          data-aos="zoom-in"
+          data-aos-offset="0"
           class="m-2 btn btn-primary align-items-center px-4"
-          href={`/reparar/${category}/${repair.key}`}
+          href={`/reparar/${category}/${repair.repairsId}`}
+          Usamos
+          repairsId
+          para
+          la
+          ruta
+          key={repair.repairsId}
+          Añadido
+          para
+          evitar
+          problemas
+          de
+          duplicados
         >
           <span class="text-start">{repair.title}</span>
           <i class="fas fa-arrow-right ms-2" />

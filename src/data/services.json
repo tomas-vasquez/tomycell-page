@@ -8,7 +8,7 @@
       "content": "En nuestro taller ofrecemos un servicio técnico completo para una amplia gama de dispositivos electrónicos, desde smartphones hasta computadoras y electrodomésticos. Nuestros técnicos altamente capacitados diagnostican y reparan de manera eficiente los problemas comunes como pantallas rotas, fallos de batería, problemas de software y más. ¡Te ayudamos a recuperar el funcionamiento de tus dispositivos en el menor tiempo posible!",
       "shortDescription": "Reparación rápida y profesional de dispositivos electrónicos, garantizando calidad y rapidez.",
       "icon": "fas fa-tools",
-      "img": "/svg/phone-repair.svg",
+      "img": "/svg/repair.svg",
       "buttonText": "Solicitar reparación",
       "msgText": "Hola, quiero información sobre Servicio Técnico de Equipos Electrónicos"
     },
@@ -29,15 +29,6 @@
       "img": "/svg/buy-broken-phone.svg",
       "buttonText": "Cotizar mi equipo",
       "msgText": "Hola, quiero información sobre Compra de Celulares Averiados"
-    },
-    {
-      "title": "Recogida y Entrega a Domicilio",
-      "content": "En TomyCell, ofrecemos un servicio de recogida y entrega a domicilio para que no tengas que salir de tu casa para reparar tu dispositivo. Solo tienes que llamarnos y coordinaremos la recogida de tu equipo, lo repararemos con el máximo cuidado y te lo entregaremos nuevamente en tu hogar. ¡Es fácil, rápido y cómodo!",
-      "shortDescription": "Recogida y entrega a domicilio de equipos para reparación, con total comodidad y seguridad.",
-      "icon": "fas fa-truck",
-      "img": "/svg/delivery-service.svg",
-      "buttonText": "Agendar servicio",
-      "msgText": "Hola, quiero información sobre Recogida y Entrega a Domicilio"
     }
   ]
 }
